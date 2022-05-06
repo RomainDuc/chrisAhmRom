@@ -1,3 +1,28 @@
-<p>home works!</p>
-
-
+<div class="container">
+  <div class="searchbox">
+      <form [formGroup]="jobSearch">
+          <div class="searchbox-individual">
+              <div class="searchbox-title">
+                <img src="./../../../assets/images/icons/tools-white.png" alt="">Tools
+              </div>
+              <select >
+                  <option value="-1" disabled selected></option>
+                  <option  *ngFor = "let tools of competences" >{{competences}}</option>
+              </select>
+          </div>
+          <div class="searchbox-individual">
+              <div class="searchbox-title">
+                  <img alt="">Location (faut ajouter une icone)
+              </div>
+              <input  type="text" placeholder="Chennai">
+          </div>
+          <div class="searchbox-individual">
+              <div class="searchbox-title">
+                  <img src="./../../../assets/images/icons/experience-white.png" alt="">Experience
+              </div>
+              <input type="text" placeholder="3 DECADES">
+          </div>
+          <button class="button primary-button">Search</button>
+      </form>
+  </div>
+</div>
