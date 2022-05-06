@@ -1,0 +1,35 @@
+<div class="h-top-fixed">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <div class="nav-left">
+        <a class="navbar-brand" href="#" [routerLink]="['/']">
+          <fa-icon [icon]="faNetwork" style="color: red; width: 100px; height: 50px;"> </fa-icon>
+        </a>
+
+
+      </div>
+
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/']" >Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/candidat']" >Candidat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/recruteur']" >Recruteur</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/questionnaire']" >QUESTIONNAIRE</a>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#login" style="color: black;">Login (devrait lancer sur un modal)</button>
+
+        </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+</div>
