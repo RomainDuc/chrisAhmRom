@@ -3,26 +3,48 @@
       <form [formGroup]="jobSearch">
           <div class="searchbox-individual">
               <div class="searchbox-title">
-                <img src="./../../../assets/images/icons/tools-white.png" alt="">Tools
+                <img  alt="">Emploi
               </div>
-              <select >
-                  <option value="-1" disabled selected></option>
-                  <option  *ngFor = "let tools of competences" >{{competences}}</option>
+
+              <select class="form-control" [formControl]="capsule">
+                <option value="-1" disabled selected></option>
+                <option *ngFor="let s of typeEmploi" value="{{s.value}}">
+                    {{ s.title }}
+                </option>
+            </select>
+          </div>
+          <div class="searchbox-individual">
+              <div class="searchbox-title">
+                  <img  alt="">Lieu
+              </div>
+              <select class="form-control" [formControl]="capsule">
+                <option value="-1" disabled selected></option>
+                <option *ngFor="let s of villes" value="{{s.value}}">
+                    {{ s.title }}
+                </option>
               </select>
           </div>
           <div class="searchbox-individual">
               <div class="searchbox-title">
-                  <img alt="">Location (faut ajouter une icone)
+                  <img  alt="">Experience
               </div>
-              <input  type="text" placeholder="Chennai">
+              <select class="form-control" [formControl]="experienceForm">
+                <option value="-1" disabled selected></option>
+                <option *ngFor="let s of experience" value="{{s}}">
+                    {{ s }}
+                </option>
+            </select>
           </div>
-          <div class="searchbox-individual">
-              <div class="searchbox-title">
-                  <img src="./../../../assets/images/icons/experience-white.png" alt="">Experience
-              </div>
-              <input type="text" placeholder="3 DECADES">
-          </div>
-          <button class="button primary-button">Search</button>
+          <button class="button primary-button" (click)="recherche()">Search</button>
       </form>
   </div>
 </div>
+
+<section *ngIf="aCherche">
+
+
+</section>
+<app-dernieres-offres></app-dernieres-offres>
+
+
+
