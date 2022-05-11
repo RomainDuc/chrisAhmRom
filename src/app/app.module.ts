@@ -12,7 +12,10 @@ import { NavBarVisiteurComponent } from './nav-bar/nav-bar-visiteur/nav-bar-visi
 import { NavBarCandidatComponent } from './nav-bar/nav-bar-candidat/nav-bar-candidat.component';
 import { NavBarRecruteurComponent } from './nav-bar/nav-bar-recruteur/nav-bar-recruteur.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DernieresOffresComponent } from './home/dernieres-offres/dernieres-offres.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -25,7 +28,8 @@ import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
     QuestionnaireComponent,
     NavBarVisiteurComponent,
     NavBarCandidatComponent,
-    NavBarRecruteurComponent
+    NavBarRecruteurComponent,
+    DernieresOffresComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,8 @@ import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
-    FormControl
+    HttpClientModule
+
 
   ],
   providers: [],
