@@ -4,6 +4,7 @@ import { CvComponent } from './cv/cv.component';
 
 
 
+
 @NgModule({
   declarations: [
     CvComponent
