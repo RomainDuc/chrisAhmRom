@@ -5,6 +5,7 @@ import { InscriptionCandidatComponent } from './inscription-candidat/inscription
 
 
 
+
 @NgModule({
   declarations: [
     CvComponent,

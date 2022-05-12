@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { offreEmploi } from 'src/app/model/offreEmlpoi.model';
 
-import { OffreEmploi } from 'src/app/model/offreEmploi';
 import { OffreServiceService } from 'src/app/services/offre-service.service';
 
 
@@ -13,7 +13,7 @@ import { OffreServiceService } from 'src/app/services/offre-service.service';
 })
 export class DernieresOffresComponent implements OnInit {
 
-  offres! : OffreEmploi[];
+  offres! : offreEmploi[];
 
 
   items = [
