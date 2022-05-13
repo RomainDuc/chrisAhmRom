@@ -1,6 +1,7 @@
 
 import { Cv } from "./Cv";
-import { OffreEmploi } from "./offreEmploi";
+import { offreEmploi } from "./offreEmlpoi.model";
+
 
 export interface Candidat {
   id : number,
@@ -11,6 +12,6 @@ export interface Candidat {
   dateNaissance : Date,
   disponibilite : boolean,
   cvs : Cv[],
-  candidatOffreEmploi : OffreEmploi[]
+  candidatOffreEmploi : offreEmploi[]
 
 }
