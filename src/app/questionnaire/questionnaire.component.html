@@ -1,1 +1,19 @@
-<p>questionnaire works!</p>
+<!-- page ou on va passer l'exam -->
+
+
+<h1>Creation de nouveaux Questionnaires</h1>
+
+<div class="container">
+  <div class="container">
+    <h4 class="section-heading text-center">Questionnaires </h4>
+    <div class="row align-items-stretch">
+      <div *ngFor="let quest of questionnaires;let i= index ">
+        <span> {{i+1}} : {{quest.secteurActivite}} </span> <a routerLink="/nouveauQuestionnaire/{{quest.id}}">Modifier </a> <button class="btn btn-dark" type="button" (click)="supprimer(quest.id)">Supprimer </button>
+
+      </div>
+      <button class="bubtn btn-info" routerLink="/nouveauQuestionnaire">Creer nouveau Questionnaire </button>
+    </div>
+
+  </div>
+
+</div>

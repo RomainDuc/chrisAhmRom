@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Questionnaire } from '../model/questionnaire.model';
+import { QuestionaireService } from '../services/questionaire.service';
 
 @Component({
   selector: 'app-questionnaire',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionnaireComponent implements OnInit {
 
-  constructor() { }
+  questionnaires !: Questionnaire[];
+
+  constructor(private questionnaireService: QuestionaireService ) { }
+
 
   ngOnInit(): void {
+    this.getQuestionnaires();
   }
 
+  getQuestionnaires() {
+    this.questionnaireService.getAll().subscribe(data => this.questionnaires = data)
+  }
+
+  supprimer(id: number) {
+    this.questionnaireService.delete(id).subscribe((data) => {
+      if(data == "DELETED SUCCESSFULLY") {
+        this. getQuestionnaires();
+        console.log(data)
+      }
+     })
+  }
 }

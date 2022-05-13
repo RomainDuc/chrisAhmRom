@@ -15,6 +15,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DernieresOffresComponent } from './home/dernieres-offres/dernieres-offres.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NouveauQuestionnaireComponent } from './questionnaire/nouveau-questionnaire/nouveau-questionnaire.component';
+
 
 
 
@@ -30,7 +32,9 @@ import { HttpClientModule } from '@angular/common/http';
     NavBarVisiteurComponent,
     NavBarCandidatComponent,
     NavBarRecruteurComponent,
-    DernieresOffresComponent
+    DernieresOffresComponent,
+    NouveauQuestionnaireComponent
+
   ],
 
   imports: [
