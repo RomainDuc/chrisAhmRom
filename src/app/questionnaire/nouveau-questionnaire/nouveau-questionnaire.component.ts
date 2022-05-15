@@ -3,10 +3,6 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Question } from 'src/app/model/question.model';
 import { Questionnaire } from 'src/app/model/questionnaire.model';
-
-import { QuestionService } from 'src/app/services/question.service';
-import { QuestionaireService } from 'src/app/services/questionaire.service';
-
 import { ReponseQues } from 'src/app/model/reponseQues.model';
 import { QuestionService } from 'src/app/services/question.service';
 import { QuestionaireService } from 'src/app/services/questionaire.service';
@@ -54,9 +50,6 @@ export class NouveauQuestionnaireComponent implements OnInit {
     private questionnaireService: QuestionaireService,
     private router: Router,
     private route: ActivatedRoute,
-
-    private questionService : QuestionService
-
     private questionService : QuestionService,
     private reponseService : ReponseService
 
@@ -104,21 +97,13 @@ export class NouveauQuestionnaireComponent implements OnInit {
   }
 
   getQuestionnaire(id: number) {
-    // this.questObjet = {id: -1,
+     // this.questObjet = {id: -1,
     //   note: 0,
     //   secteurActivite: "",
     //   questions: []
     // };
     this.questionnaireService.find(id).subscribe((data) => {
       this.questObjet = data;
-
-      this.questionnaire.controls['secteurActivite'].setValue(
-        this.questObjet.secteurActivite
-      );
-    });
-  }
-
-
       this.questionnaireAffichage= data
       this.visible = true;
       this.indexQuestion = this.questionnaireAffichage.questions.length + 1;
@@ -133,6 +118,7 @@ export class NouveauQuestionnaireComponent implements OnInit {
 
     });
   }
+
 
 
 
