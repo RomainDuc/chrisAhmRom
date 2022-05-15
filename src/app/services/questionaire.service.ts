@@ -27,5 +27,5 @@ export class QuestionaireService {
   delete(id: number) {
     return this.http.delete("http://localhost:8080/questionnaires/" + id, { responseType: 'text' });
   }
-  
+
 }

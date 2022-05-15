@@ -14,7 +14,11 @@
 
         <div class="mb-3">
           <label for="secteurActivite" class="form-label"> Secteur d'activité</label>
-          <input type="text" class="form-control" name="secteurActivite" formControlName="secteurActivite"  #questObjet.secteurActivite >
+
+ 
+
+          <input type="text" class="form-control" name="secteurActivite" formControlName="secteurActivite">
+
           <div id="secteurActiviteHelp" class="form-text">Exemple : Java, React, Python ...</div>
         </div>
 
@@ -26,6 +30,7 @@
 </div>
 
 <div class="container" *ngIf="visible">
+
   <div class="col-6">
     <form [formGroup]="questionForm">
       <div class="mb-3">
@@ -40,4 +45,59 @@
 </div>
 
 
+
+
+  <div class="row">
+    <div class="col-6">
+      <form [formGroup]="questionForm">
+        <div class="mb-3">
+          <label for="texte" class="form-label"> Ennoncé de la Question</label>
+          <input type="text" class="form-control" name="texte" formControlName="texte">
+          <div id="texteHelp" class="form-text">Ecrivez ici l'énnoncé de la question</div>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="confirmQuestion()"> Valider</button>
+      </form>
+
+
+
+
+
+      <div class="container" *ngIf="afficheReponse">
+        <div class="col-6">
+          <form [formGroup]="reponseForm">
+            <div class="mb-3">
+              <label for="nom" class="form-label"> Reponse</label>
+              <input type="text" class="form-control" name="nom" formControlName="nom">
+              <input type="checkbox" class="form-check-input" id="juste" formControlName="juste">
+              <label class="form-check-label" for="juste">Cocher si c'est la bonne réponse</label>
+            </div>
+            <button type="button" class="btn btn-secondary" (click)="ajoutReponse()"> Ajouter une réponse</button>
+
+
+            <button type="submit" class="btn btn-primary" (click)="confirmReponses()"> Valider</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <ul class="list-group">
+        <li class="list-group-item">
+          Questionnaire : {{questionnaireAffichage.secteurActivite}}
+        </li>
+        <div *ngFor="let question of questionnaireAffichage.questions">
+          <li class="list-group-item fw-bold">
+            Question n° {{question.index}} : {{question.texte}}
+          </li>
+          <div *ngFor="let reponse of question.reponses; let i = index">
+            <li class="list-group-item">
+             <span class="col-2"></span>Reponse n° {{i+1}} :  {{reponse.nom}} <span *ngIf="reponse.juste"> (Bonne réponse)</span>
+            </li>
+          </div>
+        </div>
+
+      </ul>
+    </div>
+  </div>
+</div>
 

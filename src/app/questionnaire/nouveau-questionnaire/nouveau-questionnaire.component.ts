@@ -3,8 +3,15 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Question } from 'src/app/model/question.model';
 import { Questionnaire } from 'src/app/model/questionnaire.model';
+
 import { QuestionService } from 'src/app/services/question.service';
 import { QuestionaireService } from 'src/app/services/questionaire.service';
+
+import { ReponseQues } from 'src/app/model/reponseQues.model';
+import { QuestionService } from 'src/app/services/question.service';
+import { QuestionaireService } from 'src/app/services/questionaire.service';
+import { ReponseService } from 'src/app/services/reponse.service';
+
 
 @Component({
   selector: 'app-nouveau-questionnaire',
@@ -18,6 +25,16 @@ export class NouveauQuestionnaireComponent implements OnInit {
   question! : Question;
   indexQuestion : number = 1;
 
+
+  reponse !: ReponseQues;
+  reponses : ReponseQues[] = []
+
+  afficheReponse : boolean = false;
+
+  questionnaireAffichage !: Questionnaire;
+
+
+
   questionnaire = new FormGroup({
     secteurActivite: new FormControl(''),
   });
@@ -26,11 +43,23 @@ export class NouveauQuestionnaireComponent implements OnInit {
     texte: new FormControl(),
   });
 
+  reponseForm = new FormGroup({
+    nom : new FormControl(''),
+    juste : new FormControl()
+  });
+
+
+
   constructor(
     private questionnaireService: QuestionaireService,
     private router: Router,
     private route: ActivatedRoute,
+
     private questionService : QuestionService
+
+    private questionService : QuestionService,
+    private reponseService : ReponseService
+
   ) {}
 
   ngOnInit(): void {
@@ -39,7 +68,9 @@ export class NouveauQuestionnaireComponent implements OnInit {
 
   getInit() {
     this.route.params.subscribe((params) => {
+
       this.id = +params['id'];
+
       //if(this.id === null && this.id === undefined)
       if (!this.id) {
         this.questObjet = {
@@ -57,6 +88,17 @@ export class NouveauQuestionnaireComponent implements OnInit {
         };
         this.getQuestionnaire(this.id);
         this.visible = true;
+
+
+        this.question= {
+          id: -1,
+          index: 0,
+          texte:"",
+          questionnaire: this.questObjet,
+          reponses:[]
+        }
+
+
       }
     });
   }
@@ -69,11 +111,28 @@ export class NouveauQuestionnaireComponent implements OnInit {
     // };
     this.questionnaireService.find(id).subscribe((data) => {
       this.questObjet = data;
+
       this.questionnaire.controls['secteurActivite'].setValue(
         this.questObjet.secteurActivite
       );
     });
   }
+
+
+      this.questionnaireAffichage= data
+      this.questionnaireAffichage.questions.forEach(question => {
+        this.reponseService.getAllByQuestion(question.id).subscribe(data => {
+          question.reponses = data;
+        })
+      })
+      this.questionnaire.controls['secteurActivite'].setValue(
+        this.questObjet.secteurActivite
+      );
+
+    });
+  }
+
+
 
   creeQestionnaire() {
     //on declare un objet pour qu'on l'envoye ensuite dans la requete add
@@ -91,6 +150,7 @@ export class NouveauQuestionnaireComponent implements OnInit {
   }
 
   confirmQuestion() {
+
     this.question = {
       id: -1,
     index: this.indexQuestion,
@@ -103,4 +163,67 @@ export class NouveauQuestionnaireComponent implements OnInit {
     })
 
   }
+
+    // this.question = {
+    //   id: -1,
+    // index: this.indexQuestion,
+    // texte: this.questionForm.get('texte')?.value,
+    // questionnaire: this.questObjet,
+    // reponses:[]
+    // }
+    this.question.index = this.indexQuestion;
+    this.question.texte = this.questionForm.get('texte')?.value;
+    this.afficheReponse = true;
+    // this.questionService.add(this.question).subscribe(data => {
+    //   this.question = data
+    // })
+
+  }
+
+  ajoutReponse() {
+    //faut ajouter une case Réponse
+    this.reponse= {
+      id: -1,
+      nom : this.reponseForm.get('nom')?.value,
+      juste : this.reponseForm.get('juste')?.value,
+      choisie: false,
+      question : this.question
+    }
+    this.reponses.push(this.reponse)
+    this.reponseForm.reset()
+
+  }
+
+  confirmReponses() {
+    this.reponse= {
+      id: -1,
+      nom : this.reponseForm.get('nom')?.value,
+      juste : this.reponseForm.get('juste')?.value,
+      choisie: false,
+      question : this.question
+    }
+    this.reponses.push(this.reponse)
+    //this.question.reponses = this.reponses;
+
+    // console.log(this.question.id)
+    // console.log(this.question.texte)
+    // console.log(this.question.questionnaire.id)
+    this.question.questionnaire.id = this.id
+    this.questionService.add(this.question).subscribe(data => {
+      this.question = data;
+      this.question.questionnaire.id = this.id
+      this.reponses.forEach(item => {
+        item.question.id = this.question.id
+        console.log( "id de Question de cette réponse", item.question.id)
+        this.reponseService.add(item).subscribe(() => {
+          console.log("reponse sauvegardée")
+        });
+      })
+    })
+
+
+    this.afficheReponse= false;
+  }
+
+
 }

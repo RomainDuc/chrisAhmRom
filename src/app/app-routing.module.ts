@@ -17,7 +17,9 @@ const routes: Routes = [
   {path : 'nouveauQuestionnaire', component: NouveauQuestionnaireComponent},
   {path : 'nouveauQuestionnaire/:id', component: NouveauQuestionnaireComponent},
   {path : 'lieux', component: LieuxComponent},
-  {path: 'lieu/:id', component: LieuComponent }
+  {path: 'lieu/:id', component: LieuComponent },
+  {path : 'nouveauQuestionnaire/:id', component: NouveauQuestionnaireComponent}
+
 ];
 
 @NgModule({
