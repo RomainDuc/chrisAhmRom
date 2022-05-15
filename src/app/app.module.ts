@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DernieresOffresComponent } from './home/dernieres-offres/dernieres-offres.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NouveauQuestionnaireComponent } from './questionnaire/nouveau-questionnaire/nouveau-questionnaire.component';
+import { ExamenComponent } from './questionnaire/examen/examen.component';
 
 
 
@@ -33,7 +34,8 @@ import { NouveauQuestionnaireComponent } from './questionnaire/nouveau-questionn
     NavBarCandidatComponent,
     NavBarRecruteurComponent,
     DernieresOffresComponent,
-    NouveauQuestionnaireComponent
+    NouveauQuestionnaireComponent,
+    ExamenComponent
 
   ],
 

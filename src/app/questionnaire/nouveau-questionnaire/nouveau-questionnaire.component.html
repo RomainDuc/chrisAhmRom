@@ -19,7 +19,8 @@
         </div>
 
 
-        <button type="submit" class="btn btn-primary" (click)="creeQestionnaire()"> Creer Qestionnaire</button>
+        <button type="submit" class="btn btn-primary" (click)="creeQestionnaire()" *ngIf="!id"> Creer Questionnaire</button>
+        <button type="submit" class="btn btn-primary" (click)="creeQestionnaire()" *ngIf="id"> Modifier Questionnaire</button>
       </form>
     </div>
   </div>
@@ -43,6 +44,9 @@
 
       <div class="container" *ngIf="afficheReponse">
         <div class="col-6">
+          <ul>
+            <li *ngFor="let reponse of reponses; let i = index"> Reponse n° {{i+1}} : {{reponse.nom}} </li>
+          </ul>
           <form [formGroup]="reponseForm">
             <div class="mb-3">
               <label for="nom" class="form-label"> Reponse</label>
@@ -61,7 +65,7 @@
     </div>
     <div class="col-6">
       <ul class="list-group">
-        <li class="list-group-item">
+        <li class="list-group-item text-center">
           Questionnaire : {{questionnaireAffichage.secteurActivite}}
         </li>
         <div *ngFor="let question of questionnaireAffichage.questions">
