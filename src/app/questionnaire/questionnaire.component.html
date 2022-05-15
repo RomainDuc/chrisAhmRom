@@ -6,13 +6,22 @@
 <div class="container">
   <div class="container">
     <h4 class="section-heading text-center">Questionnaires </h4>
-    <div class="row align-items-stretch">
-      <div *ngFor="let quest of questionnaires;let i= index ">
-        <span> {{i+1}} : {{quest.secteurActivite}} </span> <a routerLink="/nouveauQuestionnaire/{{quest.id}}">Modifier </a> <button class="btn btn-dark" type="button" (click)="supprimer(quest.id)">Supprimer </button>
 
-      </div>
-      <button class="bubtn btn-info" routerLink="/nouveauQuestionnaire">Creer nouveau Questionnaire </button>
-    </div>
+    <table>
+      <tr *ngFor="let quest of questionnaires;let i= index ">
+        <td> {{i+1}} : {{quest.secteurActivite}} </td> <td><a class="btn btn-secondary"
+          routerLink="/nouveauQuestionnaire/{{quest.id}}">
+          <fa-icon [icon]="iconeEdit"> </fa-icon>
+        </a></td>
+        <td><button class="btn btn-dark" type="button" (click)="supprimer(quest.id)">
+          <fa-icon [icon]="iconePoubelle"> </fa-icon>
+        </button></td>
+        <td><button class="btn btn-info" routerLink="/examen/{{quest.id}}">Passer Exam</button> </td>
+
+      </tr>
+    </table>
+    <span class="col-3"></span> <button class="btn btn-info col-3" routerLink="/nouveauQuestionnaire">Creer nouveau
+      Questionnaire </button>
 
   </div>
 

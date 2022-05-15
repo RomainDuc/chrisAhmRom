@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Questionnaire } from '../model/questionnaire.model';
 import { QuestionaireService } from '../services/questionaire.service';
 
@@ -11,6 +12,11 @@ import { QuestionaireService } from '../services/questionaire.service';
 export class QuestionnaireComponent implements OnInit {
 
   questionnaires !: Questionnaire[];
+
+  //icones :
+  iconeEdit =faEdit;
+  iconePoubelle = faTrash;
+
 
   constructor(private questionnaireService: QuestionaireService ) { }
 

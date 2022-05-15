@@ -87,7 +87,7 @@ export class NouveauQuestionnaireComponent implements OnInit {
           questions: [],
         };
         this.getQuestionnaire(this.id);
-        this.visible = true;
+
 
 
         this.question= {
@@ -120,10 +120,12 @@ export class NouveauQuestionnaireComponent implements OnInit {
 
 
       this.questionnaireAffichage= data
+      this.visible = true;
+      this.indexQuestion = this.questionnaireAffichage.questions.length + 1;
       this.questionnaireAffichage.questions.forEach(question => {
         this.reponseService.getAllByQuestion(question.id).subscribe(data => {
           question.reponses = data;
-        })
+         })
       })
       this.questionnaire.controls['secteurActivite'].setValue(
         this.questObjet.secteurActivite
@@ -148,37 +150,17 @@ export class NouveauQuestionnaireComponent implements OnInit {
 
     //console.log("ca a marché peut-etre")
   }
-
+  //stocke la question en local, mais pas en base encore, je ne fais ca qu'une fois les réponses enregistrées
   confirmQuestion() {
 
-    this.question = {
-      id: -1,
-    index: this.indexQuestion,
-    texte: this.questionForm.get('texte')?.value,
-    questionnaire: this.questObjet,
-    reponses:[]
-    }
-    this.questionService.add(this.question).subscribe(data => {
-      this.question = data
-    })
 
-  }
-
-    // this.question = {
-    //   id: -1,
-    // index: this.indexQuestion,
-    // texte: this.questionForm.get('texte')?.value,
-    // questionnaire: this.questObjet,
-    // reponses:[]
-    // }
     this.question.index = this.indexQuestion;
     this.question.texte = this.questionForm.get('texte')?.value;
     this.afficheReponse = true;
-    // this.questionService.add(this.question).subscribe(data => {
-    //   this.question = data
-    // })
+    this.questionnaireAffichage.questions.push(this.question)
 
   }
+
 
   ajoutReponse() {
     //faut ajouter une case Réponse
@@ -190,7 +172,9 @@ export class NouveauQuestionnaireComponent implements OnInit {
       question : this.question
     }
     this.reponses.push(this.reponse)
+   // this.questionnaireAffichage.questions[this.questionnaireAffichage.questions.length-1].reponses.push(this.reponse);
     this.reponseForm.reset()
+
 
   }
 
@@ -201,28 +185,35 @@ export class NouveauQuestionnaireComponent implements OnInit {
       juste : this.reponseForm.get('juste')?.value,
       choisie: false,
       question : this.question
+
     }
     this.reponses.push(this.reponse)
+    //this.questionnaireAffichage.questions[this.questionnaireAffichage.questions.length-1].reponses.push(this.reponse);
     //this.question.reponses = this.reponses;
 
     // console.log(this.question.id)
     // console.log(this.question.texte)
     // console.log(this.question.questionnaire.id)
+   // this.questionnaireAffichage.questions = [];
     this.question.questionnaire.id = this.id
     this.questionService.add(this.question).subscribe(data => {
       this.question = data;
       this.question.questionnaire.id = this.id
       this.reponses.forEach(item => {
         item.question.id = this.question.id
-        console.log( "id de Question de cette réponse", item.question.id)
+       // console.log( "id de Question de cette réponse", item.question.id)
         this.reponseService.add(item).subscribe(() => {
-          console.log("reponse sauvegardée")
+         // console.log("reponse sauvegardée")
+         this.getQuestionnaire(this.id);
         });
       })
     })
 
 
     this.afficheReponse= false;
+    this.questionForm.reset();
+    this.reponseForm.reset();
+    this.indexQuestion =this.indexQuestion +1;
   }
 
 
