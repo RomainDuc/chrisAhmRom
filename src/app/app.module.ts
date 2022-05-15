@@ -15,8 +15,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DernieresOffresComponent } from './home/dernieres-offres/dernieres-offres.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LieuxComponent } from './lieux/lieux.component';
 import { NouveauQuestionnaireComponent } from './questionnaire/nouveau-questionnaire/nouveau-questionnaire.component';
 import { ExamenComponent } from './questionnaire/examen/examen.component';
+import { LieuComponent } from './lieux/lieu/lieu.component';
+import { NouveauQuestionnaireComponent } from './questionnaire/nouveau-questionnaire/nouveau-questionnaire.component';
+
+
 
 
 
@@ -35,7 +40,13 @@ import { ExamenComponent } from './questionnaire/examen/examen.component';
     NavBarRecruteurComponent,
     DernieresOffresComponent,
     NouveauQuestionnaireComponent,
-    ExamenComponent
+    ExamenComponent,
+    LieuxComponent,
+    NouveauQuestionnaireComponent,
+    LieuComponent,
+    NouveauQuestionnaireComponent
+
+
 
   ],
 

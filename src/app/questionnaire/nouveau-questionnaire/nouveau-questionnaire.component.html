@@ -14,7 +14,11 @@
 
         <div class="mb-3">
           <label for="secteurActivite" class="form-label"> Secteur d'activité</label>
+
+ 
+
           <input type="text" class="form-control" name="secteurActivite" formControlName="secteurActivite">
+
           <div id="secteurActiviteHelp" class="form-text">Exemple : Java, React, Python ...</div>
         </div>
 
@@ -27,6 +31,23 @@
 </div>
 
 <div class="container" *ngIf="visible">
+
+  <div class="col-6">
+    <form [formGroup]="questionForm">
+      <div class="mb-3">
+        <label for="texte" class="form-label"> Ennoncé de la Question</label>
+        <input type="text" class="form-control" name="texte" formControlName="texte">
+        <div id="texteHelp" class="form-text">Ecrivez ici l'énnoncé de la question</div>
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="confirmQuestion()"> Valider</button>
+    </form>
+
+  </div>
+</div>
+
+
+
+
   <div class="row">
     <div class="col-6">
       <form [formGroup]="questionForm">
@@ -83,3 +104,4 @@
     </div>
   </div>
 </div>
+
