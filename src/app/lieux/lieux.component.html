@@ -1,1 +1,78 @@
-<p>lieux works!</p>
+<table class="table">
+  <thead>
+    <tr>
+
+      <th scope="col">Id</th>
+      <th scope="col">Adresse</th>
+      <th scope="col">codePostal</th>
+      <th scope="col">ville</th>
+      <th scope="col">région</th>
+      <th scope="col">pays</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let lieu of lieux$ | async">
+     <!--<a href="#" class="list-group-item list-group-item-action"></a>-->
+        <th scope="row">{{lieu.id}}</th>
+        <td>{{lieu.adresse}}</td>
+        <td>{{lieu.codePostal}}</td>
+        <td>{{lieu.ville}}</td>
+        <td>{{lieu.region}}</td>
+        <td>{{lieu.pays}}</td>
+
+        <td><button type="button" class="btn btn-success" (click)="getLieu(lieu.id)">Select</button></td>
+        <td><button type="button" class="btn btn-info">Modifier</button></td>
+        <td><button type="button" class="btn btn-danger">Supprimer</button></td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<form>
+
+    <label for="idAdresse" class="form-label">Adresse</label>
+    <input type="text" class="form-control" id="idAdresse" placeholder="adresse">
+
+    <label for="idCp" class="form-label">Code Postal</label>
+    <input type="text" class="form-control" id="idCp" placeholder="codePostal">
+
+    <label for="idVille" class="form-label">Ville</label>
+    <input type="text" class="form-control" id="idVille" placeholder="ville">
+
+    <label for="idRegion" class="form-label">Région</label>
+    <input type="text" class="form-control" id="idRegion" placeholder="région">
+
+    <label for="idPays" class="form-label">Pays</label>
+    <input type="text" class="form-control" id="idPays" placeholder="pays">
+
+
+    <button class="btn btn-primary" type="submit">Valider</button>
+
+</form>
+<table class="table">
+  <thead>
+    <tr>
+
+      <th scope="col">Id</th>
+      <th scope="col">Adresse</th>
+      <th scope="col">codePostal</th>
+      <th scope="col">ville</th>
+      <th scope="col">région</th>
+      <th scope="col">pays</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr >
+       <app-lieu *ngFor="let lieu of lieux$ |async" [lieu]="lieu"></app-lieu>
+
+    </tr>
+
+  </tbody>
+</table>
