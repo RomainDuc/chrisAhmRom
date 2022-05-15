@@ -19,7 +19,7 @@ import { LieuxComponent } from './lieux/lieux.component';
 import { NouveauQuestionnaireComponent } from './questionnaire/nouveau-questionnaire/nouveau-questionnaire.component';
 import { ExamenComponent } from './questionnaire/examen/examen.component';
 import { LieuComponent } from './lieux/lieu/lieu.component';
-import { NouveauQuestionnaireComponent } from './questionnaire/nouveau-questionnaire/nouveau-questionnaire.component';
+
 
 
 
