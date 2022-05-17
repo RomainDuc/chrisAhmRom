@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -19,6 +18,13 @@ import { LieuxComponent } from './lieux/lieux.component';
 import { NouveauQuestionnaireComponent } from './questionnaire/nouveau-questionnaire/nouveau-questionnaire.component';
 import { ExamenComponent } from './questionnaire/examen/examen.component';
 import { LieuComponent } from './lieux/lieu/lieu.component';
+import { CompetenceComponent } from './competence/competence.component';
+import { CvComponent } from './candidat/cv/cv.component';
+import { ExperienceProfessionelleComponent } from './candidat/cv/experience-professionelle/experience-professionelle.component';
+import { DiplomeComponent } from './candidat/cv/diplome/diplome.component';
+import { FormationComponent } from './candidat/cv/formation/formation.component';
+import { NouvelleCompetenceComponent } from './competence/nouvelle-competence/nouvelle-competence.component';
+import { DatePipe } from '@angular/common';
 
 
 
@@ -44,8 +50,13 @@ import { LieuComponent } from './lieux/lieu/lieu.component';
     LieuxComponent,
     NouveauQuestionnaireComponent,
     LieuComponent,
-    NouveauQuestionnaireComponent
-
+    NouveauQuestionnaireComponent,
+    CompetenceComponent,
+    CvComponent,
+    DiplomeComponent,
+    FormationComponent,
+    ExperienceProfessionelleComponent,
+    NouvelleCompetenceComponent
 
 
   ],
@@ -60,7 +71,12 @@ import { LieuComponent } from './lieux/lieu/lieu.component';
 
 
   ],
-  providers: [],
+  providers:[ DatePipe],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
+
+export const experencesPro = [ExperienceProfessionelleComponent]
+
+
