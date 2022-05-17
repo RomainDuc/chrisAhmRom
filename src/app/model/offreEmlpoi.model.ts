@@ -16,20 +16,20 @@ export interface offreEmploi{
 }
 
 export enum Statut{
-     disponible = "0",
-     indisponible ="1"
-    
+    DISPONIBLE = "0",
+    INDISPONIBLE ="1"
+
 }
 
 
 export enum TypeContrat{
-    
-        CDI= "0", 
-        CDD= "1", 
-        SAISONNIER= "2", 
-        STAGE= "3", 
-        ETUDIANT= "4", 
+
+        CDI= "0",
+        CDD= "1",
+        SAISONNIER= "2",
+        STAGE= "3",
+        ETUDIANT= "4",
         INTERIM= "5"
-    
+
 }
 

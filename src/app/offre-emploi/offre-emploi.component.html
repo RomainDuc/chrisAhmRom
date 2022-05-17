@@ -1,0 +1,54 @@
+<div class="container">
+  <form [formGroup]="offreEmploiForm" (ngSubmit)="creeOffre()">
+
+    <label for="categorieOffre" class="form-label">Catégorie Offre</label>
+    <input type="text" class="form-control" id="categorieOffre" placeholder="categorieOffre"
+      formControlName="categorieOffre">
+
+    <label for="description" class="form-label">Description de l'offre</label>
+    <input type="text" class="form-control" id="description" placeholder="description" formControlName="description">
+    <div class="form-group col-3">
+      <label for="dateLimite" class="form-label">Date limite de Candidature</label>
+      <input type="date" class="form-control" id="dateLimite" formControlName="dateLimite">
+    </div>
+    <div class="form-group col-3">
+      <label for="salaire" class="form-label">Salaire</label>
+      <input type="number" class="form-control" id="salaire" placeholder="0" formControlName="salaire">
+    </div>
+    <div class="form-group col-3">
+      <label for="experienceSouhaite" class="form-label">Experience Souhaitée</label>
+      <input type="number" class="form-control" id="experienceSouhaite" placeholder="0"
+        formControlName="experienceSouhaite">
+    </div>
+
+    <div class="form-group col-3">
+      <label> Niveau de Qualification souhaité</label>
+      <select class="form-control" formControlName="niveauQualification">
+        <option *ngFor="let g of niveauQualificationEnum" value="{{g.value}}">
+          {{ g.title }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group col-3">
+      <label> Type de contrat proposé</label>
+      <select class="form-control" formControlName="typeContrat">
+        <option *ngFor="let g of typeContratEnum" value="{{g.value}}">
+          {{ g.title }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group col-3">
+      <label> Statut de l'offre d'emploi</label>
+      <select class="form-control" formControlName="statut">
+        <option *ngFor="let g of statutEnum" value="{{g.value}}">
+          {{ g.title }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group col-3">
+      <input type="checkbox" class="form-check-input" formControlName="active"> Offre active ?
+    </div>
+    <button class="btn btn-primary" type="submit" >Valider</button>
+
+  </form>
+</div>
