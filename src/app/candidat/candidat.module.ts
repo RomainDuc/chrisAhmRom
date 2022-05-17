@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CvComponent } from './cv/cv.component';
 import { InscriptionCandidatComponent } from './inscription-candidat/inscription-candidat.component';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -9,7 +10,8 @@ import { InscriptionCandidatComponent } from './inscription-candidat/inscription
 @NgModule({
   declarations: [
     CvComponent,
-    InscriptionCandidatComponent
+    InscriptionCandidatComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule
