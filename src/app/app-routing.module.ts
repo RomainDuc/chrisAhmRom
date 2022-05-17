@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { LieuComponent } from './lieux/lieu/lieu.component';
 
 import { LieuxComponent } from './lieux/lieux.component';
+import { OffreEmploiComponent } from './offre-emploi/offre-emploi.component';
 import { ExamenComponent } from './questionnaire/examen/examen.component';
 import { NouveauQuestionnaireComponent } from './questionnaire/nouveau-questionnaire/nouveau-questionnaire.component';
 
@@ -25,9 +26,11 @@ const routes: Routes = [
   {path : 'examen/:id', component: ExamenComponent},
   {path : 'lieux', component: LieuxComponent},
   {path: 'lieu/:id', component: LieuComponent },
+  {path : 'offreEmploi', component: OffreEmploiComponent},
   {path: 'competences', component: CompetenceComponent },
   {path : 'cv', component: CvComponent},
-  {path: 'createCompetence', component: NouvelleCompetenceComponent },
+  {path: 'createCompetence', component: NouvelleCompetenceComponent }
+
 
 ];
 

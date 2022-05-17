@@ -81,17 +81,6 @@ export class NouveauQuestionnaireComponent implements OnInit {
         };
         this.getQuestionnaire(this.id);
 
-
-
-        this.question= {
-          id: -1,
-          index: 0,
-          texte:"",
-          questionnaire: this.questObjet,
-          reponses:[]
-        }
-
-
       }
     });
   }

@@ -18,6 +18,7 @@ import { LieuxComponent } from './lieux/lieux.component';
 import { NouveauQuestionnaireComponent } from './questionnaire/nouveau-questionnaire/nouveau-questionnaire.component';
 import { ExamenComponent } from './questionnaire/examen/examen.component';
 import { LieuComponent } from './lieux/lieu/lieu.component';
+import { OffreEmploiComponent } from './offre-emploi/offre-emploi.component';
 import { CompetenceComponent } from './competence/competence.component';
 import { CvComponent } from './candidat/cv/cv.component';
 import { ExperienceProfessionelleComponent } from './candidat/cv/experience-professionelle/experience-professionelle.component';
@@ -25,6 +26,7 @@ import { DiplomeComponent } from './candidat/cv/diplome/diplome.component';
 import { FormationComponent } from './candidat/cv/formation/formation.component';
 import { NouvelleCompetenceComponent } from './competence/nouvelle-competence/nouvelle-competence.component';
 import { DatePipe } from '@angular/common';
+
 
 
 
@@ -51,12 +53,14 @@ import { DatePipe } from '@angular/common';
     NouveauQuestionnaireComponent,
     LieuComponent,
     NouveauQuestionnaireComponent,
+    OffreEmploiComponent,
     CompetenceComponent,
     CvComponent,
     DiplomeComponent,
     FormationComponent,
     ExperienceProfessionelleComponent,
     NouvelleCompetenceComponent
+
 
 
   ],
