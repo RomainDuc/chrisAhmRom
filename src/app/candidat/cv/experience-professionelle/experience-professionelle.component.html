@@ -1,0 +1,90 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+
+      <th scope="col">id</th>
+      <th scope="col">Numero</th>
+      <th scope="col">Description</th>
+      <th scope="col">Annee Experience</th>
+      <th scope="col">Entreprise</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+      <!--la méthode selectioner de rendre clickable et selectionnable chaque competence -->
+    <tr *ngFor="let experienceProfessionelle of experienceProfessionelles$ | async" (click)="selectioner(experienceProfessionelle.id)">
+
+        <th scope="row">{{experienceProfessionelle.id}}</th>
+        <td>{{experienceProfessionelle.numero}}</td>
+        <td>{{experienceProfessionelle.description}}</td>
+        <td>{{experienceProfessionelle.anneeExperience}}</td>
+        <td>{{experienceProfessionelle.entreprise}}</td>
+         <!--on click sur ce bouton pour SUPPRIMER une competence -->
+        <td><button type="button" class="btn btn-danger" (click)="deleteExperienceProfessionelle(experienceProfessionelle.id)">Supprimer</button></td>
+
+    </tr>
+
+  </tbody>
+  <!--on click sur ce bouton pour accèder au formulaire de création -->
+  <button type="button" class="btn btn-info" (click)="isCreate()">+</button>
+
+</table>
+
+  <!--Le formulaire s'affiche lorsque le candidat désire CREER UNE COMPETENCE -->
+<div *ngIf="creation">
+  <form [formGroup]="experienceProfessionelleForm" (ngSubmit)="addExperienceProfessionelle()" >
+    <div class="form-group">
+      <label for="idNomComp" class="form-label">Numero</label>
+      <input type="number" class="form-control" id="idNom" placeholder="nom" formControlName="numero">
+    </div>
+    <div class="form-group">
+      <label for="idDescriptionComp" class="form-label">Description</label>
+      <input type="text" format="d" class="form-control" id="idAnneeObtention" placeholder="date Obtention" formControlName="description">
+    </div>
+    <div class="form-group">
+      <label for="niveauAptitudesComp" class="form-label">Annees Experiences</label>
+      <input type="number" class="form-control" id="idNQualidf" placeholder="niveau aptitude" formControlName="anneeExperience">
+    </div>
+    <div class="form-group">
+      <label for="niveauAptitudesComp" class="form-label">Entreprise</label>
+      <input type="text" class="form-control" id="idNQualidf" placeholder="niveau aptitude" formControlName="entreprise">
+    </div>
+    <button class="btn btn-primary" type="submit">Valider</button>
+    <button type="button" class="btn btn-info" (click)="isCreate()">Cancel</button>
+
+  </form>
+</div>
+
+<!--Le formulaire s'affiche lorsque le candidat désire MODIFIER UNE COMPETENCE -->
+<div *ngIf="modif">
+  <form [formGroup]="experienceProfessionelleForm" (ngSubmit)="updateExperienceProfessionelle()" >
+    <div class="form-group">
+      <label for="idNumero" class="form-label">Numero</label>
+      <input type="number" class="form-control" id="idAdresse" placeholder="nom" formControlName="numero">
+    </div>
+    <div class="form-group">
+      <label for="idDescription" class="form-label">Description</label>
+      <input type="text" class="form-control"  id="idDescriptionExp" placeholder="Votre experience.." formControlName="description">
+    </div>
+    <div class="form-group">
+      <label for="niveauAnnee" class="form-label">Annees Experiences</label>
+      <input type="number" class="form-control" id="idAnneeExperience" placeholder="5 ans, 16 mois..." formControlName="anneeExperience">
+    </div>
+    <div class="form-group">
+      <label for="niveauAptitudesComp" class="form-label">Entreprise</label>
+      <input type="text" class="form-control" id="idAnneeExperience" placeholder="description entreprise.." formControlName="entreprise">
+    </div>
+    <button class="btn btn-primary" type="submit">Modifier</button>
+    <button type="button" class="btn btn-primary" (click)="isMofif()">Cancel</button>
+  </form>
+</div>
+
+<!--La balise ci-dessous permet d'afficher les resultats sur la page
+<pre>
+
+  {{diplomeForm.value | json}}
+</pre>
+
+-->
+

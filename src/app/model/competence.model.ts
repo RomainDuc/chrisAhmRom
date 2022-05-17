@@ -7,8 +7,8 @@ export interface Competence {
     nom: string;
     description: string;
     niveauAptitudes: string;
-    cv: Cv;
-    competenceOffres: CompetenceOffreEmploi[]
+    cv: Cv|undefined;
+    competenceOffres: CompetenceOffreEmploi[]|undefined
 
   }
 
