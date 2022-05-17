@@ -7,7 +7,7 @@ export interface ExperienceProfessionelle{
     description:string;
     anneeExperience: number;
     entreprise: String;
-    cv: Cv;
+    cv: Cv|undefined;
 
 }
 
