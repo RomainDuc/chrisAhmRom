@@ -1,24 +1,42 @@
 <section class="faq">
-  <div class="container">
-      <h4 class="section-heading text-center"><span>Dernières </span>Offres <span>d'emploi</span></h4>
-      <div class="row align-items-stretch">
-          <div class="col-md-6">
-              <div class="faq-individual"  *ngFor="let offre of offres |  slice:0:5" (click)="toggleClass(offre)" [ngClass]="{'active': offre.active}">
-                  <p class="faq-question">{{offre.description}}</p>
-                  <p class="faq-answer">{{offre.experienceSouhaite}}</p>
-                  <p class="faq-answer">{{offre.categorieOffre}}</p>
-                  <p class="faq-answer">{{offre.id}}</p>
-                  <p class="faq-answer">{{offre.datePublication | date}}</p>
+  <div class="container bootstrap snippets bootdeys">
+    <div class="col-12">
+      <div class="content-card">
+        <div class="card-big-shadow">
+          <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
+            <div class="content">
+
+
+              <h4 class="title">Dernières Offres d'emploi</h4>
+              <div class="row align-items-stretch">
+                <div class="col-md-6">
+                  <div class="faq-individual" *ngFor="let offre of offres |  slice:0:5" (click)="toggleClass(offre)"
+                    [ngClass]="{'active': offre.active}">
+                    <p class="faq-question"> Offre {{offre.categorieOffre}}</p>
+                    <p class="faq-answer"> Description : {{offre.description}}</p>
+                    <p class="faq-answer"> Salaire : {{offre.salaire}} €</p>
+                    <p class="faq-answer"> Experience Souhaitée :{{offre.experienceSouhaite}} ans</p>
+
+                    <p class="faq-answer"> Date de publication :{{offre.datePublication | date}}</p>
+                    <p class="faq-answer"> Date limite de candidature  :{{offre.dateLimite | date}}</p>
+                    <button style="color: black;" class="faq-answer btn btn-success" (click)="lien(offre.id)"> Visualiser Offre</button>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="faq-individual" *ngFor="let offre of offres |  slice:6:11" (click)="toggleClass(offre)"
+                    [ngClass]="{'active': offre.active}">
+                    <p class="faq-question">{{offre.description}}</p>
+                    <p class="faq-answer">{{offre.experienceSouhaite}}</p>
+                    <p class="faq-answer">{{offre.categorieOffre}}</p>
+                    <a style="color: black;" class="faq-answer" (click)="lien(offre.id)"> Visualiser Offre</a>
+                  </div>
+                </div>
               </div>
+            </div>
           </div>
-          <div class="col-md-6">
-              <div class="faq-individual"  *ngFor="let offre of offres |  slice:6:11" (click)="toggleClass(offre)" [ngClass]="{'active': offre.active}">
-                <p class="faq-question">{{offre.description}}</p>
-                <p class="faq-answer">{{offre.experienceSouhaite}}</p>
-                <p class="faq-answer">{{offre.categorieOffre}}</p>
-                <p class="faq-answer">{{offre.id}}</p>
-              </div>
-          </div>
+        </div>
       </div>
+    </div>
   </div>
+
 </section>

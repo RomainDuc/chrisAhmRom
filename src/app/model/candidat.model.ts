@@ -5,6 +5,7 @@ import { offreEmploi } from "./offreEmlpoi.model";
   export interface Candidat {
     id : number,
   login : string,
+  password : string,
   nom : string,
   prenom : string,
   email : string,
@@ -13,7 +14,6 @@ import { offreEmploi } from "./offreEmlpoi.model";
   cvs : Cv[],
   candidatOffreEmploi : offreEmploi[]
   }
-  
-  
-  
-  
+
+
+

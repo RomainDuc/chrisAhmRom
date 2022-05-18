@@ -39,7 +39,7 @@
                 <button
                   class="btn btn-warning"
                   routerLink="edit/{{ item.id }}"
-                  (click)="updateCandidat1()"
+                  (click)="updateCandidat1(item.id)"
                 >
                   <i class="fa fa-trash-o"></i>update
                 </button>
@@ -83,6 +83,17 @@
                       required
                       [(ngModel)]="candidat.login"
                       name="login"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="password"
+                      required
+                      [(ngModel)]="candidat.password"
+                      name="password"
                     />
                   </div>
                   <div class="form-group">
@@ -166,7 +177,7 @@
     <div *ngIf="currentCandidat.id">
         <h4>Tutorial</h4>
         <div>
-           <label><strong>Login:</strong></label> 
+           <label><strong>Login:</strong></label>
            {{ currentCandidat.login }}
         </div>
         <div>
@@ -197,7 +208,7 @@
              <label><strong>CandidatOffreEmploi:</strong></label>
                 {{ currentCandidat.candidatOffreEmploi }}
         </div>
-  
+
 
         <a
             class="badge badge-warning"
@@ -239,7 +250,7 @@
                                 name="nom"
                             />
                      </div>
-      
+
                      <div class="form-group">
                         <label for="prenom">Prenom</label>
                         <input
@@ -265,11 +276,11 @@
 
                      <label for="diponibilite">Disponibilite: </label><br>
                     <select class="form-group" >
-          
+
                        <option value="">--Merci de choisir--</option>
                        <option [ngValue]="true" >Disponible</option>
                        <option [ngValue]="false">Non disponible</option>
-                    
+
                     </select>
 
                     <div class="form-group">
@@ -283,7 +294,7 @@
                             name="dateNaissance"
                         />
                     </div>
-    
+
                 </form>
 
                 <button class="badge badge-danger mr-2" (click)="deleteCandidat()">

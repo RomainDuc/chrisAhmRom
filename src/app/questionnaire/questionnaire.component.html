@@ -1,28 +1,39 @@
 <!-- page ou on va passer l'exam -->
 
 
-<h1>Creation de nouveaux Questionnaires</h1>
 
-<div class="container">
-  <div class="container">
-    <h4 class="section-heading text-center">Questionnaires </h4>
+<div class="container bootstrap snippets bootdeys">
+  <div class="row">
+    <div class="col-8">
+      <div class="content-card">
+        <div class="card-big-shadow">
+          <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
+            <div class="content">
+              <h4 class="title">Gestion des questionnaire</h4>
 
-    <table>
-      <tr *ngFor="let quest of questionnaires;let i= index ">
-        <td> {{i+1}} : {{quest.secteurActivite}} </td> <td><a class="btn btn-secondary"
-          routerLink="/nouveauQuestionnaire/{{quest.id}}">
-          <fa-icon [icon]="iconeEdit"> </fa-icon>
-        </a></td>
-        <td><button class="btn btn-dark" type="button" (click)="supprimer(quest.id)">
-          <fa-icon [icon]="iconePoubelle"> </fa-icon>
-        </button></td>
-        <td><button class="btn btn-info" routerLink="/examen/{{quest.id}}">Passer Exam</button> </td>
 
-      </tr>
-    </table>
-    <span class="col-3"></span> <button class="btn btn-info col-3" routerLink="/nouveauQuestionnaire">Creer nouveau
-      Questionnaire </button>
 
+              <table class="table table-borderless">
+                <tr *ngFor="let quest of questionnaires;let i= index ">
+                  <td> {{i+1}} : {{quest.secteurActivite}} </td>
+                  <td><a class="btn btn-secondary" routerLink="/nouveauQuestionnaire/{{quest.id}}">
+                      <fa-icon [icon]="iconeEdit"> </fa-icon>
+                    </a></td>
+                  <td><button class="btn btn-dark" type="button" (click)="supprimer(quest.id)">
+                      <fa-icon [icon]="iconePoubelle"> </fa-icon>
+                    </button></td>
+                  <td><button class="btn btn-info" routerLink="/examen/{{quest.id}}">Passer Exam</button> </td>
+
+                </tr>
+              </table>
+              <span ></span> <button class="btn btn-info col-3" routerLink="/nouveauQuestionnaire">Creer
+                nouveau
+                Questionnaire </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
 </div>

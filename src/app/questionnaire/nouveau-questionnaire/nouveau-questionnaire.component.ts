@@ -203,5 +203,9 @@ export class NouveauQuestionnaireComponent implements OnInit {
     this.indexQuestion =this.indexQuestion +1;
   }
 
+  retour() {
+    this.router.navigate(['questionnaire'])
+  }
+
 
 }

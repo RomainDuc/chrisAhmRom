@@ -17,6 +17,7 @@ import { ExamenComponent } from './questionnaire/examen/examen.component';
 import { NouveauQuestionnaireComponent } from './questionnaire/nouveau-questionnaire/nouveau-questionnaire.component';
 
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
+import { SingleOffreComponent } from './single-offre/single-offre.component';
 
 const routes: Routes = [
 
@@ -44,7 +45,8 @@ const routes: Routes = [
 
   {path: 'competences', component: CompetenceComponent },
   {path : 'cv', component: CvComponent},
-  {path: 'createCompetence', component: NouvelleCompetenceComponent }
+  {path: 'createCompetence', component: NouvelleCompetenceComponent },
+  {path: 'offre/:id', component: SingleOffreComponent }
 
 
 

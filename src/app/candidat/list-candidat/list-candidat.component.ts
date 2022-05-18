@@ -27,6 +27,7 @@ export class ListCandidatComponent implements OnInit {
   @Input() currentCandidat: Candidat = {
     id:-1,
     login: '',
+    password: '',
     nom: '',
     prenom: '',
     email: '',
@@ -38,11 +39,12 @@ export class ListCandidatComponent implements OnInit {
 
 
   message = '';
-  
+
 dateNaissance !: Date;
   candidat: Candidat = {
     id: -1,
     login: '',
+    password: '',
     nom: '',
     prenom: '',
     email: '',
@@ -50,7 +52,7 @@ dateNaissance !: Date;
     cvs: [],
     candidatOffreEmploi: [],
     dateNaissance: new Date(),
-    
+
   };
 
 
@@ -71,7 +73,7 @@ dateNaissance !: Date;
     public fb: FormBuilder,
     public toastr: ToastrService,
     private date: DatePipe
-    ) { 
+    ) {
 
       this. getAll();
       this.date;
@@ -81,15 +83,15 @@ dateNaissance !: Date;
 
       if (!this.viewMode) {
         this.message = '';
-        this.getCandidat(this.route.snapshot.params["id"]);
+        //this.getCandidat(this.route.snapshot.params["id"]);
       }
-      
+
       this.getAll()
 
       this.id = this.route.snapshot.params['id'];
       this.isAddMode = !this.id;
-      
-      
+
+
 
     }
 
@@ -113,7 +115,7 @@ dateNaissance !: Date;
     }
 
     this.loading = true;
- 
+
 }
 
   getAll(){
@@ -135,14 +137,14 @@ dateNaissance !: Date;
         .subscribe(
           data => {
             console.log(data);
-            this.toastr.warning('data successfully deleted!'); 
+            this.toastr.warning('data successfully deleted!');
             this.getAll();
           },
           error => console.log(error));
     }
   }
 
- 
+
 
   reloadCurrentRoute() {
     this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
@@ -162,34 +164,43 @@ dateNaissance !: Date;
       });
   }
 
-  updateCandidat1(): void {
-    const data = {
-      id:this.currentCandidat.id,
-      login: this.currentCandidat.login,
-      nom: this.currentCandidat.nom,
-      prenom: this.currentCandidat.prenom,
-      email: this.currentCandidat.email,
-      dateNaissance: this.currentCandidat.dateNaissance,
-      disponibilite: this.currentCandidat.disponibilite,
-      cv: this.currentCandidat.cvs,
-      candidatOffreEmploi: this.currentCandidat.candidatOffreEmploi
-  
-    };
+  updateCandidat1( id :number): void {
+     this.candidatService.find(id).subscribe(data => {
+       this.candidat = data;
+     })
 
-  
 
-    this.candidatService.update(this.currentCandidat.id, data)
-      .subscribe({
-        next: (res) => {
-          console.log(res);
-          //this.currentCandidat.published = status;
-          this.toastr.success('The Candidat was updated successfully!');
-        },
-        error: (e) => console.error(e)
-      });
+
+    // const data = {
+    //   id:this.currentCandidat.id,
+    //   login: this.currentCandidat.login,
+    //   password : this.currentCandidat.password,
+    //   nom: this.currentCandidat.nom,
+    //   prenom: this.currentCandidat.prenom,
+    //   email: this.currentCandidat.email,
+    //   dateNaissance: this.currentCandidat.dateNaissance,
+    //   disponibilite: this.currentCandidat.disponibilite,
+    //   cv: this.currentCandidat.cvs,
+    //   candidatOffreEmploi: this.currentCandidat.candidatOffreEmploi
+
+    // };
+
+
+
+
+
+    // this.candidatService.update(this.currentCandidat.id, this.currentCandidat)
+    //   .subscribe({
+    //     next: (res) => {
+    //       console.log(res);
+    //       //this.currentCandidat.published = status;
+    //       this.toastr.success('The Candidat was updated successfully!');
+    //     },
+    //     error: (e) => console.error(e)
+    //   });
   }
 
-selectData(item: any) {  
+selectData(item: any) {
   this.candidatService.formData = this.fb.group(Object.assign({},item));
 
 }
@@ -198,6 +209,7 @@ selectData(item: any) {
 saveCandidat(): void {
   const data = {
     login: this.candidat.login,
+    password: this.candidat.password,
     nom: this.candidat.nom,
     prenom: this.candidat.prenom,
     email: this.candidat.email,
@@ -215,6 +227,7 @@ saveCandidat(): void {
         this.submitted = true;
         this.toastr.success('Candidat created with success');
         this.selectData;
+        this.getAll()
       },
       error: (e) => console.error(e)
     });

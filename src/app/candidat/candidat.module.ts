@@ -17,7 +17,7 @@ import { CompetenceComponent } from '../competence/competence.component';
 @NgModule({
   declarations: [
 
-    CvComponent,
+
     InscriptionCandidatComponent,
     RegisterComponent,
     InscriptionCandidatComponent,

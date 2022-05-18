@@ -26,10 +26,7 @@ export class ExamenComponent implements OnInit {
     private questionnaireService: QuestionaireService,
     private reponseService : ReponseService,
     private router : Router
-  ) {
-
-
-  }
+  ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
