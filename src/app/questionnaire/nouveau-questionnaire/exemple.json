@@ -1,0 +1,749 @@
+[
+  {
+      "id": 121,
+      "version": 0,
+      "note": 0,
+      "secteurActivite": "QCM Javascript",
+      "questions": [
+          {
+              "id": 122,
+              "version": 0,
+              "index": 1,
+              "texte": "Dans quel balise HTML plaçons-nous le code JavaScript?",
+              "questionnaire": {
+                  "id": 121,
+                  "version": 0,
+                  "note": 0,
+                  "secteurActivite": "QCM Javascript"
+              }
+          },
+          {
+              "id": 127,
+              "version": 0,
+              "index": 2,
+              "texte": "Comment faire appelle à une fonction nommée « sum »?",
+              "questionnaire": {
+                  "id": 121,
+                  "version": 0,
+                  "note": 0,
+                  "secteurActivite": "QCM Javascript"
+              }
+          },
+          {
+              "id": 132,
+              "version": 0,
+              "index": 3,
+              "texte": "Quelle est la syntaxe correcte pour faire référence à un script externe appelé « myscript.js »?",
+              "questionnaire": {
+                  "id": 121,
+                  "version": 0,
+                  "note": 0,
+                  "secteurActivite": "QCM Javascript"
+              }
+          },
+          {
+              "id": 136,
+              "version": 0,
+              "index": 4,
+              "texte": "Le fichier externe de JavaScript doit contenir la balise <script>?",
+              "questionnaire": {
+                  "id": 121,
+                  "version": 0,
+                  "note": 0,
+                  "secteurActivite": "QCM Javascript"
+              }
+          },
+          {
+              "id": 139,
+              "version": 0,
+              "index": 5,
+              "texte": "Quel est le bon endroit pour insérer un code JavaScript?",
+              "questionnaire": {
+                  "id": 121,
+                  "version": 0,
+                  "note": 0,
+                  "secteurActivite": "QCM Javascript"
+              }
+          },
+          {
+              "id": 144,
+              "version": 0,
+              "index": 6,
+              "texte": "Comment écrivez-vous « Hello World » dans une boîte d’alerte?",
+              "questionnaire": {
+                  "id": 121,
+                  "version": 0,
+                  "note": 0,
+                  "secteurActivite": "QCM Javascript"
+              }
+          },
+          {
+              "id": 149,
+              "version": 0,
+              "index": 7,
+              "texte": "Comment écrire une condition IF en JavaScript?",
+              "questionnaire": {
+                  "id": 121,
+                  "version": 0,
+                  "note": 0,
+                  "secteurActivite": "QCM Javascript"
+              }
+          },
+          {
+              "id": 154,
+              "version": 0,
+              "index": 8,
+              "texte": "Comment écrire une condition IF pour vérifier si « a » n’est PAS égal à 2?",
+              "questionnaire": {
+                  "id": 121,
+                  "version": 0,
+                  "note": 0,
+                  "secteurActivite": "QCM Javascript"
+              }
+          },
+          {
+              "id": 159,
+              "version": 0,
+              "index": 9,
+              "texte": " Comment créer une fonction en JavaScript?",
+              "questionnaire": {
+                  "id": 121,
+                  "version": 0,
+                  "note": 0,
+                  "secteurActivite": "QCM Javascript"
+              }
+          },
+          {
+              "id": 164,
+              "version": 0,
+              "index": 10,
+              "texte": "Quelle est la syntaxe correcte pour vérifier la valeur de « c » ?",
+              "questionnaire": {
+                  "id": 121,
+                  "version": 0,
+                  "note": 0,
+                  "secteurActivite": "QCM Javascript"
+              }
+          }
+      ]
+  }
+]
+
+[
+  {
+      "id": 123,
+      "nom": " La balise js",
+      "juste": false,
+      "choisie": false,
+      "question": {
+          "id": 122,
+          "version": 0,
+          "index": 1,
+          "texte": "Dans quel balise HTML plaçons-nous le code JavaScript?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  },
+  {
+      "id": 124,
+      "nom": "La balise javascript",
+      "juste": false,
+      "choisie": false,
+      "question": {
+          "id": 122,
+          "version": 0,
+          "index": 1,
+          "texte": "Dans quel balise HTML plaçons-nous le code JavaScript?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  },
+  {
+      "id": 125,
+      "nom": "La balise script",
+      "juste": true,
+      "choisie": false,
+      "question": {
+          "id": 122,
+          "version": 0,
+          "index": 1,
+          "texte": "Dans quel balise HTML plaçons-nous le code JavaScript?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  },
+  {
+      "id": 126,
+      "nom": "La balise rel",
+      "juste": false,
+      "choisie": false,
+      "question": {
+          "id": 122,
+          "version": 0,
+          "index": 1,
+          "texte": "Dans quel balise HTML plaçons-nous le code JavaScript?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  }
+]
+
+[
+  {
+      "id": 128,
+      "nom": "sum()",
+      "juste": true,
+      "choisie": false,
+      "question": {
+          "id": 127,
+          "version": 0,
+          "index": 2,
+          "texte": "Comment faire appelle à une fonction nommée « sum »?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  },
+  {
+      "id": 129,
+      "nom": "call function sum()",
+      "juste": false,
+      "choisie": false,
+      "question": {
+          "id": 127,
+          "version": 0,
+          "index": 2,
+          "texte": "Comment faire appelle à une fonction nommée « sum »?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  },
+  {
+      "id": 130,
+      "nom": "Aucune de ces réponses n’est vraie.",
+      "juste": false,
+      "choisie": false,
+      "question": {
+          "id": 127,
+          "version": 0,
+          "index": 2,
+          "texte": "Comment faire appelle à une fonction nommée « sum »?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  },
+  {
+      "id": 131,
+      "nom": "call sum()",
+      "juste": false,
+      "choisie": false,
+      "question": {
+          "id": 127,
+          "version": 0,
+          "index": 2,
+          "texte": "Comment faire appelle à une fonction nommée « sum »?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  }
+]
+[
+  {
+      "id": 133,
+      "nom": "<script href=\"myscript.js\">",
+      "juste": true,
+      "choisie": false,
+      "question": {
+          "id": 132,
+          "version": 0,
+          "index": 3,
+          "texte": "Quelle est la syntaxe correcte pour faire référence à un script externe appelé « myscript.js »?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  },
+  {
+      "id": 134,
+      "nom": "<script src=\"myscript.js\">",
+      "juste": false,
+      "choisie": false,
+      "question": {
+          "id": 132,
+          "version": 0,
+          "index": 3,
+          "texte": "Quelle est la syntaxe correcte pour faire référence à un script externe appelé « myscript.js »?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  },
+  {
+      "id": 135,
+      "nom": "<script name=\"myscript.js\">",
+      "juste": false,
+      "choisie": false,
+      "question": {
+          "id": 132,
+          "version": 0,
+          "index": 3,
+          "texte": "Quelle est la syntaxe correcte pour faire référence à un script externe appelé « myscript.js »?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  }
+]
+[
+  {
+      "id": 137,
+      "nom": "Vrai",
+      "juste": false,
+      "choisie": false,
+      "question": {
+          "id": 136,
+          "version": 0,
+          "index": 4,
+          "texte": "Le fichier externe de JavaScript doit contenir la balise <script>?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  },
+  {
+      "id": 138,
+      "nom": "Faux",
+      "juste": true,
+      "choisie": false,
+      "question": {
+          "id": 136,
+          "version": 0,
+          "index": 4,
+          "texte": "Le fichier externe de JavaScript doit contenir la balise <script>?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  }
+]
+
+[
+  {
+      "id": 140,
+      "nom": "La section <head>",
+      "juste": false,
+      "choisie": false,
+      "question": {
+          "id": 139,
+          "version": 0,
+          "index": 5,
+          "texte": "Quel est le bon endroit pour insérer un code JavaScript?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  },
+  {
+      "id": 141,
+      "nom": "Les deux sections <head> et <body> sont correctes",
+      "juste": false,
+      "choisie": false,
+      "question": {
+          "id": 139,
+          "version": 0,
+          "index": 5,
+          "texte": "Quel est le bon endroit pour insérer un code JavaScript?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  },
+  {
+      "id": 142,
+      "nom": "La section <body>",
+      "juste": true,
+      "choisie": false,
+      "question": {
+          "id": 139,
+          "version": 0,
+          "index": 5,
+          "texte": "Quel est le bon endroit pour insérer un code JavaScript?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  },
+  {
+      "id": 143,
+      "nom": "Aucune de ces réponses n’est vraie",
+      "juste": false,
+      "choisie": false,
+      "question": {
+          "id": 139,
+          "version": 0,
+          "index": 5,
+          "texte": "Quel est le bon endroit pour insérer un code JavaScript?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  }
+]
+
+[
+  {
+      "id": 145,
+      "nom": "msg(\"Hello World\");",
+      "juste": false,
+      "choisie": false,
+      "question": {
+          "id": 144,
+          "version": 0,
+          "index": 6,
+          "texte": "Comment écrivez-vous « Hello World » dans une boîte d’alerte?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  },
+  {
+      "id": 146,
+      "nom": "alert(\"Hello World\");",
+      "juste": true,
+      "choisie": false,
+      "question": {
+          "id": 144,
+          "version": 0,
+          "index": 6,
+          "texte": "Comment écrivez-vous « Hello World » dans une boîte d’alerte?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  },
+  {
+      "id": 147,
+      "nom": "msgBox(\"Hello World\");",
+      "juste": false,
+      "choisie": false,
+      "question": {
+          "id": 144,
+          "version": 0,
+          "index": 6,
+          "texte": "Comment écrivez-vous « Hello World » dans une boîte d’alerte?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  },
+  {
+      "id": 148,
+      "nom": "alertBox(\"Hello World\");",
+      "juste": false,
+      "choisie": false,
+      "question": {
+          "id": 144,
+          "version": 0,
+          "index": 6,
+          "texte": "Comment écrivez-vous « Hello World » dans une boîte d’alerte?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  }
+]
+
+[
+  {
+      "id": 150,
+      "nom": "if a = 2 then",
+      "juste": false,
+      "choisie": false,
+      "question": {
+          "id": 149,
+          "version": 0,
+          "index": 7,
+          "texte": "Comment écrire une condition IF en JavaScript?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  },
+  {
+      "id": 151,
+      "nom": "if a = 2",
+      "juste": false,
+      "choisie": false,
+      "question": {
+          "id": 149,
+          "version": 0,
+          "index": 7,
+          "texte": "Comment écrire une condition IF en JavaScript?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  },
+  {
+      "id": 152,
+      "nom": "if a == 2 else",
+      "juste": false,
+      "choisie": false,
+      "question": {
+          "id": 149,
+          "version": 0,
+          "index": 7,
+          "texte": "Comment écrire une condition IF en JavaScript?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  },
+  {
+      "id": 153,
+      "nom": "if (a == 2)",
+      "juste": true,
+      "choisie": false,
+      "question": {
+          "id": 149,
+          "version": 0,
+          "index": 7,
+          "texte": "Comment écrire une condition IF en JavaScript?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  }
+]
+
+[
+  {
+      "id": 155,
+      "nom": "if a <> 2",
+      "juste": false,
+      "choisie": false,
+      "question": {
+          "id": 154,
+          "version": 0,
+          "index": 8,
+          "texte": "Comment écrire une condition IF pour vérifier si « a » n’est PAS égal à 2?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  },
+  {
+      "id": 156,
+      "nom": "if (a != 2)",
+      "juste": true,
+      "choisie": false,
+      "question": {
+          "id": 154,
+          "version": 0,
+          "index": 8,
+          "texte": "Comment écrire une condition IF pour vérifier si « a » n’est PAS égal à 2?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  },
+  {
+      "id": 157,
+      "nom": "if a =! 2 then",
+      "juste": false,
+      "choisie": false,
+      "question": {
+          "id": 154,
+          "version": 0,
+          "index": 8,
+          "texte": "Comment écrire une condition IF pour vérifier si « a » n’est PAS égal à 2?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  },
+  {
+      "id": 158,
+      "nom": "if (a <> 2)",
+      "juste": false,
+      "choisie": false,
+      "question": {
+          "id": 154,
+          "version": 0,
+          "index": 8,
+          "texte": "Comment écrire une condition IF pour vérifier si « a » n’est PAS égal à 2?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  }
+]
+
+[
+  {
+      "id": 165,
+      "nom": "if (c == \"XYZ\") then { } else { }",
+      "juste": false,
+      "choisie": false,
+      "question": {
+          "id": 164,
+          "version": 0,
+          "index": 10,
+          "texte": "Quelle est la syntaxe correcte pour vérifier la valeur de « c » ?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  },
+  {
+      "id": 166,
+      "nom": "if (c = \"XYZ\") then { } else { }",
+      "juste": false,
+      "choisie": false,
+      "question": {
+          "id": 164,
+          "version": 0,
+          "index": 10,
+          "texte": "Quelle est la syntaxe correcte pour vérifier la valeur de « c » ?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  },
+  {
+      "id": 167,
+      "nom": "if (c == \"XYZ\") { } else { }",
+      "juste": true,
+      "choisie": false,
+      "question": {
+          "id": 164,
+          "version": 0,
+          "index": 10,
+          "texte": "Quelle est la syntaxe correcte pour vérifier la valeur de « c » ?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  },
+  {
+      "id": 168,
+      "nom": "if (c = \"XYZ\") { } else { }",
+      "juste": false,
+      "choisie": false,
+      "question": {
+          "id": 164,
+          "version": 0,
+          "index": 10,
+          "texte": "Quelle est la syntaxe correcte pour vérifier la valeur de « c » ?",
+          "questionnaire": {
+              "id": 121,
+              "version": 0,
+              "note": 0,
+              "secteurActivite": "QCM Javascript"
+          }
+      }
+  }
+]

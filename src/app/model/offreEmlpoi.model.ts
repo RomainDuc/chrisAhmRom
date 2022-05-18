@@ -1,4 +1,5 @@
 import { NiveauQualification } from "./Diplome.model";
+import { Lieu } from "./lieu.model";
 
 export interface offreEmploi{
     id : number,
@@ -11,7 +12,8 @@ export interface offreEmploi{
     niveauQualification : NiveauQualification;
     typeContrat : TypeContrat,
     statut : Statut,
-    active : boolean
+    active : boolean,
+    lieu : Lieu
 
 }
 
