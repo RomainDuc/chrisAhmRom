@@ -16,7 +16,7 @@ export class ReponseService {
     return this.http.get<any>("http://localhost:8080/reponses");
   }
   getAllByQuestion(id: number) {
-    return this.http.get<any>("http://localhost:8080//questions/"+id+"/reponses");
+    return this.http.get<any>("http://localhost:8080/questions/"+id+"/reponses");
   }
 
   add(obj: ReponseQues): Observable<ReponseQues> {

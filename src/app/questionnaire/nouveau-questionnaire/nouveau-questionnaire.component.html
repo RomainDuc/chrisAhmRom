@@ -23,8 +23,10 @@
         </div>
 
 
-        <button type="submit" class="btn btn-primary" (click)="creeQestionnaire()" *ngIf="!id"> Creer Questionnaire</button>
-        <button type="submit" class="btn btn-primary" (click)="creeQestionnaire()" *ngIf="id"> Modifier Questionnaire</button>
+        <button type="submit" class="btn btn-primary" (click)="creeQestionnaire()" *ngIf="!id"> Creer
+          Questionnaire</button>
+        <button type="submit" class="btn btn-primary" (click)="creeQestionnaire()" *ngIf="id"> Modifier
+          Questionnaire</button>
       </form>
     </div>
   </div>
@@ -32,7 +34,7 @@
 
 <div class="container" *ngIf="visible">
 
-  <div class="col-6">
+  <!-- <div class="col-6">
     <form [formGroup]="questionForm">
       <div class="mb-3">
         <label for="texte" class="form-label"> Ennoncé de la Question</label>
@@ -42,8 +44,7 @@
       <button type="submit" class="btn btn-primary" (click)="confirmQuestion()"> Valider</button>
     </form>
 
-  </div>
-</div>
+  </div> -->
 
 
 
@@ -64,7 +65,7 @@
 
 
       <div class="container" *ngIf="afficheReponse">
-        <div class="col-6">
+        <div>
           <ul>
             <li *ngFor="let reponse of reponses; let i = index"> Reponse n° {{i+1}} : {{reponse.nom}} </li>
           </ul>
@@ -84,6 +85,7 @@
         </div>
       </div>
     </div>
+
     <div class="col-6">
       <ul class="list-group">
         <li class="list-group-item text-center">
@@ -95,7 +97,8 @@
           </li>
           <div *ngFor="let reponse of question.reponses; let i = index">
             <li class="list-group-item">
-             <span class="col-2"></span>Reponse n° {{i+1}} :  {{reponse.nom}} <span *ngIf="reponse.juste"> (Bonne réponse)</span>
+              <span class="col-2"></span>Reponse n° {{i+1}} : {{reponse.nom}} <span *ngIf="reponse.juste"> (Bonne
+                réponse)</span>
             </li>
           </div>
         </div>
@@ -103,5 +106,4 @@
       </ul>
     </div>
   </div>
-
-
+</div>
