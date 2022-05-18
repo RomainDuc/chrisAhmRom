@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { offreEmploi } from 'src/app/model/offreEmlpoi.model';
 
 import { OffreServiceService } from 'src/app/services/offre-service.service';
@@ -34,7 +35,8 @@ export class DernieresOffresComponent implements OnInit {
         { name: '3', active: false}
       ];
 
-  constructor(private offreService: OffreServiceService) {
+  constructor(private offreService: OffreServiceService,
+    private router : Router) {
     this.getOffffres();
    }
 
@@ -70,6 +72,10 @@ export class DernieresOffresComponent implements OnInit {
 
   getOffffres() {
     this.offreService.getAll().subscribe(data => this.offres= data)
+  }
+
+  lien(id : number) {
+    this.router.navigate(['offre/'+ id])
   }
 
 }

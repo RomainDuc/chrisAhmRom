@@ -20,6 +20,7 @@ export class RegisterComponent implements OnInit {
   @Input() currentCandidat: Candidat = {
     id: -1,
     login: '',
+    password :'',
     nom: '',
     prenom: '',
     email: '',
@@ -27,17 +28,17 @@ export class RegisterComponent implements OnInit {
     cvs: [],
     candidatOffreEmploi: [],
     dateNaissance: new Date(),
-    
+
   };
 
- 
+
 
   constructor(
     private candidatService: CandidatService,
     private toastr: ToastrService,
     private route: ActivatedRoute,
     private router: Router) { }
-  
+
 
   ngOnInit(): void {
     if (!this.viewMode) {
@@ -61,6 +62,7 @@ export class RegisterComponent implements OnInit {
     const data = {
       id:this.currentCandidat.id,
       login: this.currentCandidat.login,
+      password : this.currentCandidat.password,
       nom: this.currentCandidat.nom,
       prenom: this.currentCandidat.prenom,
       email: this.currentCandidat.email,
@@ -68,10 +70,10 @@ export class RegisterComponent implements OnInit {
       disponibilite: this.currentCandidat.disponibilite,
       cv: this.currentCandidat.cvs,
       candidatOffreEmploi: this.currentCandidat.candidatOffreEmploi
-  
+
     };
 
-  
+
 
     this.candidatService.update(this.currentCandidat.id, data)
       .subscribe({
@@ -85,7 +87,7 @@ export class RegisterComponent implements OnInit {
   }
 
   updateCandidat(): void {
-  
+
 
     this.candidatService.update(this.currentCandidat.id, this.currentCandidat)
       .subscribe({
@@ -107,7 +109,7 @@ export class RegisterComponent implements OnInit {
         error: (e) => console.error(e)
       });
   }
- 
+
 }
 
 

@@ -41,6 +41,7 @@ import { LoginCandidatComponent } from './login/login-candidat/login-candidat.co
 import { LoginRecruteurComponent } from './login/login-recruteur/login-recruteur.component';
 import { OffreEmploiComponent } from './offre-emploi/offre-emploi.component';
 import { CvComponent } from './candidat/cv/cv.component';
+import { SingleOffreComponent } from './single-offre/single-offre.component';
 
 
 
@@ -83,7 +84,8 @@ import { CvComponent } from './candidat/cv/cv.component';
     ExperienceProfessionelleComponent,
     FormationComponent,
     CompetenceComponent,
-    CvComponent
+    CvComponent,
+    SingleOffreComponent
 
 
 
