@@ -25,6 +25,8 @@ import { DiplomeComponent } from './candidat/cv/diplome/diplome.component';
 import { FormationComponent } from './candidat/cv/formation/formation.component';
 import { NouvelleCompetenceComponent } from './competence/nouvelle-competence/nouvelle-competence.component';
 import { DatePipe } from '@angular/common';
+import { LoginCandidatComponent } from './login/login-candidat/login-candidat.component';
+import { LoginRecruteurComponent } from './login/login-recruteur/login-recruteur.component';
 
 
 
@@ -56,7 +58,9 @@ import { DatePipe } from '@angular/common';
     DiplomeComponent,
     FormationComponent,
     ExperienceProfessionelleComponent,
-    NouvelleCompetenceComponent
+    NouvelleCompetenceComponent,
+    LoginCandidatComponent,
+    LoginRecruteurComponent
 
 
   ],

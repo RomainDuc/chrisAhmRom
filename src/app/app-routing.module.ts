@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { LieuComponent } from './lieux/lieu/lieu.component';
 
 import { LieuxComponent } from './lieux/lieux.component';
+import { LoginCandidatComponent } from './login/login-candidat/login-candidat.component';
+import { LoginRecruteurComponent } from './login/login-recruteur/login-recruteur.component';
 import { ExamenComponent } from './questionnaire/examen/examen.component';
 import { NouveauQuestionnaireComponent } from './questionnaire/nouveau-questionnaire/nouveau-questionnaire.component';
 
@@ -23,8 +25,9 @@ const routes: Routes = [
   {path : 'nouveauQuestionnaire', component: NouveauQuestionnaireComponent},
   {path : 'nouveauQuestionnaire/:id', component: NouveauQuestionnaireComponent},
   {path : 'examen/:id', component: ExamenComponent},
-  {path : 'lieux', component: LieuxComponent},
-  {path: 'lieu/:id', component: LieuComponent },
+  {path : 'cvs', component: CvComponent},
+  {path: 'login/candidat', component: LoginCandidatComponent },
+  {path: 'login/recruteur', component: LoginRecruteurComponent },
   {path: 'competences', component: CompetenceComponent },
   {path : 'cv', component: CvComponent},
   {path: 'createCompetence', component: NouvelleCompetenceComponent },
