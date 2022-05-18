@@ -30,16 +30,17 @@ import { APP_BASE_HREF, DatePipe, DecimalPipe } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './candidat/register/register.component';
 
-import { OffreEmploiComponent } from './offre-emploi/offre-emploi.component';
+
 import { CompetenceComponent } from './competence/competence.component';
-import { CvComponent } from './candidat/cv/cv.component';
 import { ExperienceProfessionelleComponent } from './candidat/cv/experience-professionelle/experience-professionelle.component';
 import { DiplomeComponent } from './candidat/cv/diplome/diplome.component';
 import { FormationComponent } from './candidat/cv/formation/formation.component';
 import { NouvelleCompetenceComponent } from './competence/nouvelle-competence/nouvelle-competence.component';
-import { DatePipe } from '@angular/common';
+
 import { LoginCandidatComponent } from './login/login-candidat/login-candidat.component';
 import { LoginRecruteurComponent } from './login/login-recruteur/login-recruteur.component';
+import { OffreEmploiComponent } from './offre-emploi/offre-emploi.component';
+import { CvComponent } from './candidat/cv/cv.component';
 
 
 
@@ -71,15 +72,18 @@ import { LoginRecruteurComponent } from './login/login-recruteur/login-recruteur
     ListCandidatComponent,
     RegisterComponent,
     OffreEmploiComponent,
-    CompetenceComponent,
-    CvComponent,
     DiplomeComponent,
     FormationComponent,
     ExperienceProfessionelleComponent,
     NouvelleCompetenceComponent,
     LoginCandidatComponent,
     LoginRecruteurComponent,
-    NouvelleCompetenceComponent
+    NouvelleCompetenceComponent,
+    DiplomeComponent,
+    ExperienceProfessionelleComponent,
+    FormationComponent,
+    CompetenceComponent,
+    CvComponent
 
 
 
@@ -97,7 +101,8 @@ import { LoginRecruteurComponent } from './login/login-recruteur/login-recruteur
     CommonModule,
     MatIconModule,
     BrowserAnimationsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+
 
 
   ],
