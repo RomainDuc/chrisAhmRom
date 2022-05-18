@@ -1,0 +1,145 @@
+<div *ngIf="viewMode; else editable">
+        <div *ngIf="currentCandidat.id">
+            <h4>Tutorial</h4>
+            <div>
+               <label><strong>Login:</strong></label> 
+               {{ currentCandidat.login }}
+            </div>
+            <div>
+             <label><strong>Nom:</strong></label>
+             {{ currentCandidat.nom }}
+            </div>
+            <div>
+             <label><strong>Prenom:</strong></label>
+             {{ currentCandidat.prenom }}
+            </div>
+            <div>
+                <label><strong>Email:</strong></label>
+                {{ currentCandidat.email }}
+            </div>
+            <div>
+                <label><strong>Date de Naissance:</strong></label>
+                {{ currentCandidat.dateNaissance }}
+             </div>
+            <div>
+                 <label><strong>Disponibilite:</strong></label>
+                {{ currentCandidat.disponibilite }}
+            </div>
+            <div>
+                 <label><strong>Cv:</strong></label>
+                    {{ currentCandidat.cvs }}
+            </div>
+            <div>
+                 <label><strong>CandidatOffreEmploi:</strong></label>
+                    {{ currentCandidat.candidatOffreEmploi }}
+            </div>
+      
+  
+            <a
+                class="badge badge-warning"
+                routerLink="/candidats/{{ currentCandidat.id }}"
+            >
+            Edit
+            </a>
+        </div>
+  
+        <div *ngIf="!currentCandidat">
+          <br />
+            <p>Please click on a Candidat...</p>
+        </div>
+</div>
+  
+          <ng-template #editable>
+              <div *ngIf="currentCandidat.id" class="edit-form">
+                    <h4>Tutorial</h4>
+                    <form>
+                         <div class="form-group">
+                             <label for="login">Login</label>
+                             <input
+                                type="text"
+                                class="form-control"
+                                id="login"
+                                required
+                                [(ngModel)]="currentCandidat.login"
+                                name="login"
+                             />
+                         </div>
+                         <div class="form-group">
+                                <label for="nom">Nom</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="nom"
+                                    required
+                                    [(ngModel)]="currentCandidat.nom"
+                                    name="nom"
+                                />
+                         </div>
+          
+                         <div class="form-group">
+                            <label for="prenom">Prenom</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="prenom"
+                                required
+                                [(ngModel)]="currentCandidat.prenom"
+                                name="prenom"
+                            />
+                         </div>
+                         <div class="form-group">
+                            <label for="email">Email</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="email"
+                                required
+                                [(ngModel)]="currentCandidat.email"
+                                name="email"
+                            />
+                         </div>
+
+                         <label for="diponibilite">Disponibilite: </label><br>
+                        <select class="form-group" >
+              
+                           <option value="">--Merci de choisir--</option>
+                           <option [ngValue]="true" >Disponible</option>
+                           <option [ngValue]="false">Non disponible</option>
+                        
+                        </select>
+
+                        <div class="form-group">
+                            <label for="title">Date de naissance</label>
+                            <input
+                                type="date"
+                                class="form-control"
+                                id="dateNaissance"
+                                required
+                                [(ngModel)]="currentCandidat.dateNaissance"
+                                name="dateNaissance"
+                            />
+                        </div>
+        
+                    </form>
+  
+                    <button class="badge badge-danger mr-2" (click)="deleteCandidat()">
+                     Delete
+                    </button>
+  
+                    <button
+                        type="submit"
+                        class="badge badge-success mb-2"
+                        (click)="updateCandidat()"
+                    >
+                        Update
+                    </button>
+  
+                </div>
+  
+                 <div *ngIf="!currentCandidat.id">
+                    <br />
+                    <p>Cannot access this Tutorial...</p>
+                </div>
+            </ng-template>
+  
+

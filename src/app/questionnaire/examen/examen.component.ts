@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormArray, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Questionnaire } from 'src/app/model/questionnaire.model';
 
@@ -11,7 +12,13 @@ import { ReponseService } from 'src/app/services/reponse.service';
   styleUrls: ['./examen.component.css'],
 })
 export class ExamenComponent implements OnInit {
-  questionnaire!: Questionnaire;
+
+  questionnaire : Questionnaire = {
+    id: -1,
+    note: 9,
+    secteurActivite: "",
+    questions: []
+  };
   id!: number;
 
   constructor(
@@ -19,13 +26,17 @@ export class ExamenComponent implements OnInit {
     private questionnaireService: QuestionaireService,
     private reponseService : ReponseService,
     private router : Router
-  ) {}
+  ) {
+
+
+  }
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.id = params['id'];
     });
     this.getQuestionnaire();
+    this.nettoyerQuestionnaire();
 
   }
 
@@ -38,6 +49,7 @@ export class ExamenComponent implements OnInit {
           question.reponses = reponse;
         })
       });
+     // this.nettoyerQuestionnaire();
     });
   }
 
@@ -47,13 +59,9 @@ export class ExamenComponent implements OnInit {
       if( question.id === idQuestion) {
         question.reponses.forEach(reponse => {
           if(reponse.id === idReponse) {
-            if(reponse.choisie === false) {
-              reponse.choisie = true;
-              //console.log( reponse.id,reponse.choisie)
-            } else {
-              reponse.choisie =false;
-              //console.log( reponse.id,reponse.choisie)
-            }
+            reponse.choisie= true;
+          } else {
+            reponse.choisie= false;
           }
         })
       }
@@ -77,4 +85,7 @@ export class ExamenComponent implements OnInit {
     })
     this.router.navigate(['/questionnaire']);
   }
+
+
+
 }

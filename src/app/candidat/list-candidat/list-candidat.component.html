@@ -1,0 +1,310 @@
+<mat-toolbar color="primary">
+  <h3>Liste candidats</h3>
+</mat-toolbar>
+<div class="table-wrapper">
+  <table class="fl-table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Login</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">Email</th>
+        <th scope="col">Date naissance</th>
+        <th scope="col">disponibilite</th>
+        <th scope="col">Cv_Id</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr
+        *ngFor="
+          let item of candidatListe
+            | paginate: { itemsPerPage: 4, currentPage: pagina }
+        "
+      >
+        <td>{{ item.id }}</td>
+        <td>{{ item.login }}</td>
+        <td>{{ item.nom }}</td>
+        <td>{{ item.prenom }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.dateNaissance | date }}</td>
+        <td>{{ item.disponibilite }}</td>
+        <td>{{ item.cvs }}</td>
+
+        <td>
+          <table>
+            <tr>
+              <td>
+                <button
+                  class="btn btn-warning"
+                  routerLink="edit/{{ item.id }}"
+                  (click)="updateCandidat1()"
+                >
+                  <i class="fa fa-trash-o"></i>update
+                </button>
+              </td>
+              <td>
+                <button class="btn btn-danger" (click)="removeData(item.id)">
+                  <i class="fa fa-trash-o"></i>delete
+                </button>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<pagination-controls (pageChange)="pagina = $event"></pagination-controls>
+
+<div class="container bootstrap snippets bootdeys">
+  <div class="row">
+    <div class="col-md-4 col-sm-6 content-card">
+      <div class="card-big-shadow">
+        <div
+          class="card card-just-text"
+          data-background="color"
+          data-color="blue"
+          data-radius="none"
+        >
+          <div class="content">
+            <h6 class="category"></h6>
+            <h4 class="title"><a href="#">Ajout Candidat</a></h4>
+            <div>
+              <div class="submit-form">
+                <div *ngIf="!submitted">
+                  <div class="form-group">
+                    <label for="login">Login</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="login"
+                      required
+                      [(ngModel)]="candidat.login"
+                      name="login"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="nom"
+                      required
+                      [(ngModel)]="candidat.nom"
+                      name="nom"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="prenom">Prenom</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="prenom"
+                      required
+                      [(ngModel)]="candidat.prenom"
+                      name="prenom"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="email"
+                      required
+                      [(ngModel)]="candidat.email"
+                      name="email"
+                    />
+                  </div>
+
+                  <label for="diponibilite">Disponibilite: </label><br />
+                  <select class="form-group">
+                    <option value="">--Merci de choisir--</option>
+                    <option [ngValue]="true">Disponible</option>
+                    <option [ngValue]="false">Non disponible</option>
+                  </select>
+
+                  <div class="form-group">
+                    <label for="title">Date de naissance</label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="dateNaissance"
+                      required
+                      [(ngModel)]="candidat.dateNaissance"
+                      name="dateNaissance"
+                    />
+                  </div>
+
+                  <button (click)="saveCandidat()" class="btn btn-success">
+                    Submit
+                  </button>
+                </div>
+
+                <div *ngIf="submitted">
+                  <h4>Candidat was submitted successfully!</h4>
+                  <button class="btn btn-success" (click)="saveCandidat()">
+                    Add
+                  </button>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end card -->
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- <div *ngIf="viewMode; else editable">
+    <div *ngIf="currentCandidat.id">
+        <h4>Tutorial</h4>
+        <div>
+           <label><strong>Login:</strong></label> 
+           {{ currentCandidat.login }}
+        </div>
+        <div>
+         <label><strong>Nom:</strong></label>
+         {{ currentCandidat.nom }}
+        </div>
+        <div>
+         <label><strong>Prenom:</strong></label>
+         {{ currentCandidat.prenom }}
+        </div>
+        <div>
+            <label><strong>Email:</strong></label>
+            {{ currentCandidat.email }}
+        </div>
+        <div>
+            <label><strong>Date de Naissance:</strong></label>
+            {{ currentCandidat.dateNaissance }}
+         </div>
+        <div>
+             <label><strong>Disponibilite:</strong></label>
+            {{ currentCandidat.disponibilite }}
+        </div>
+        <div>
+             <label><strong>Cv:</strong></label>
+                {{ currentCandidat.cvs }}
+        </div>
+        <div>
+             <label><strong>CandidatOffreEmploi:</strong></label>
+                {{ currentCandidat.candidatOffreEmploi }}
+        </div>
+  
+
+        <a
+            class="badge badge-warning"
+            routerLink="/candidats/{{ currentCandidat.id }}"
+        >
+        Edit
+        </a>
+    </div>
+
+    <div *ngIf="!currentCandidat">
+      <br />
+        <p>Please click on a Candidat...</p>
+    </div>
+</div>
+
+      <ng-template #editable>
+          <div *ngIf="currentCandidat.id" class="edit-form">
+                <h4>Tutorial</h4>
+                <form>
+                     <div class="form-group">
+                         <label for="login">Login</label>
+                         <input
+                            type="text"
+                            class="form-control"
+                            id="login"
+                            required
+                            [(ngModel)]="currentCandidat.login"
+                            name="login"
+                         />
+                     </div>
+                     <div class="form-group">
+                            <label for="nom">Nom</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="nom"
+                                required
+                                [(ngModel)]="currentCandidat.nom"
+                                name="nom"
+                            />
+                     </div>
+      
+                     <div class="form-group">
+                        <label for="prenom">Prenom</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="prenom"
+                            required
+                            [(ngModel)]="currentCandidat.prenom"
+                            name="prenom"
+                        />
+                     </div>
+                     <div class="form-group">
+                        <label for="email">Email</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="email"
+                            required
+                            [(ngModel)]="currentCandidat.email"
+                            name="email"
+                        />
+                     </div>
+
+                     <label for="diponibilite">Disponibilite: </label><br>
+                    <select class="form-group" >
+          
+                       <option value="">--Merci de choisir--</option>
+                       <option [ngValue]="true" >Disponible</option>
+                       <option [ngValue]="false">Non disponible</option>
+                    
+                    </select>
+
+                    <div class="form-group">
+                        <label for="title">Date de naissance</label>
+                        <input
+                            type="date"
+                            class="form-control"
+                            id="dateNaissance"
+                            required
+                            [(ngModel)]="currentCandidat.dateNaissance"
+                            name="dateNaissance"
+                        />
+                    </div>
+    
+                </form>
+
+                <button class="badge badge-danger mr-2" (click)="deleteCandidat()">
+                 Delete
+                </button>
+
+                <button
+                    type="submit"
+                    class="badge badge-success mb-2"
+                    (click)="updateCandidat()"
+                >
+                    Update
+                </button>
+
+            </div>
+
+             <div *ngIf="!currentCandidat.id">
+                <br />
+                <p>Cannot access this Tutorial...</p>
+            </div>
+        </ng-template> -->
+
+
+

@@ -5,15 +5,27 @@
       {{questionnaire.secteurActivite}}
     </div>
 
-    <div  *ngFor="let question of questionnaire.questions">
-      <br>
-     <p style="font-weight: 700;"> Question n° {{question.index}} : {{question.texte}}</p>
+    <p style="font-weight: 700;"> Une seule des propositions est la bonne réponse</p>
 
-     <div *ngFor="let reponse of question.reponses">
-       <span > {{reponse.nom}} </span> <input type="checkbox"  (change)="changeVraiFaux(question.id, reponse.id)">
-     </div>
+
+    <div *ngFor="let question of questionnaire.questions">
+      <br>
+      <p style="font-weight: 700;"> Question n° {{question.index}} : {{question.texte}}</p>
+      <!-- <select class="form-select" aria-label="Default select example">
+        <option selected></option>
+        <option *ngFor="let reponse of question.reponses; let i = index" value="i"> {{reponse.nom}} </option>
+
+      </select> -->
+      <div>
+        <div *ngFor="let reponse of question.reponses">
+          <input type="radio" class="form-check-input" name="{{question.texte}}"
+            (change)="changeVraiFaux(question.id, reponse.id)"> <span> {{reponse.nom}} </span>
+        </div>
+      </div>
     </div>
-      <span class="col-3"></span><button class="btn btn-info col-1" (click)="validerQuestionnaire()"> Valider </button>
+
+    <span class="col-3"></span><button class="btn btn-info col-1" (click)="validerQuestionnaire()"> Valider </button>
+
   </div>
 
 </div>

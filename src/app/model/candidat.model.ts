@@ -1,12 +1,17 @@
 
+import { Cv } from "./cv.model";
+import { offreEmploi } from "./offreEmlpoi.model";
+
   export interface Candidat {
-    id: number;
-    login: string;
-    nom: string;
-    pernom: string;
-    email: string;
-    dateNaissance:Date;
-    disponibilite: boolean;
+    id : number,
+  login : string,
+  nom : string,
+  prenom : string,
+  email : string,
+  dateNaissance : Date,
+  disponibilite : boolean,
+  cvs : Cv[],
+  candidatOffreEmploi : offreEmploi[]
   }
   
   

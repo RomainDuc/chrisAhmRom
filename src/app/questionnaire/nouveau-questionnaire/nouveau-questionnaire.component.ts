@@ -81,17 +81,6 @@ export class NouveauQuestionnaireComponent implements OnInit {
         };
         this.getQuestionnaire(this.id);
 
-
-
-        this.question= {
-          id: -1,
-          index: 0,
-          texte:"",
-          questionnaire: this.questObjet,
-          reponses:[]
-        }
-
-
       }
     });
   }
@@ -139,11 +128,21 @@ export class NouveauQuestionnaireComponent implements OnInit {
   //stocke la question en local, mais pas en base encore, je ne fais ca qu'une fois les réponses enregistrées
   confirmQuestion() {
 
+    //initialise la question
+    this.question = {
+      id:-1,
+      index: 0,
+      texte : "",
+      questionnaire : this.questObjet,
+      reponses : []
+    }
+
+
 
     this.question.index = this.indexQuestion;
     this.question.texte = this.questionForm.get('texte')?.value;
     this.afficheReponse = true;
-    this.questionnaireAffichage.questions.push(this.question)
+    //this.questionnaireAffichage.questions.push(this.question)
 
   }
 
@@ -184,15 +183,17 @@ export class NouveauQuestionnaireComponent implements OnInit {
     this.question.questionnaire.id = this.id
     this.questionService.add(this.question).subscribe(data => {
       this.question = data;
-      this.question.questionnaire.id = this.id
+     // this.question.questionnaire.id = this.id
       this.reponses.forEach(item => {
         item.question.id = this.question.id
        // console.log( "id de Question de cette réponse", item.question.id)
         this.reponseService.add(item).subscribe(() => {
          // console.log("reponse sauvegardée")
-         this.getQuestionnaire(this.id);
+
         });
       })
+      this.getQuestionnaire(this.id);
+      this.reponses = []
     })
 
 

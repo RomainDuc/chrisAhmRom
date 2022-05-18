@@ -6,15 +6,13 @@ import { Formation } from "./formation.model";
 
 export interface Cv {
 
-    id: number,
-    candidat : Candidat,
-    diplomes: Diplome[],
+  id: number,
+  candidat : Candidat,
+  diplomes: Diplome[],
+  formations: Formation[],
+  experiencesProfessionelles : ExperienceProfessionelle[],
+  competences : Competence[]
 
-    formations: Formation[]
-    /*
-    experiencesProfessionelles : ExperienceProfessionelle[],
-    competences : Competence[]
-   */
 }
 
-``
+
