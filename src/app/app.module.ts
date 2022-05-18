@@ -21,7 +21,7 @@ import { LieuxComponent } from './lieux/lieux.component';
 import { NouveauQuestionnaireComponent } from './questionnaire/nouveau-questionnaire/nouveau-questionnaire.component';
 import { ExamenComponent } from './questionnaire/examen/examen.component';
 import { LieuComponent } from './lieux/lieu/lieu.component';
-<<<<<<< HEAD
+
 import { ListCandidatComponent } from './candidat/list-candidat/list-candidat.component';
 import { CommonModule } from '@angular/common';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -29,7 +29,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { APP_BASE_HREF, DatePipe, DecimalPipe } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './candidat/register/register.component';
-=======
+
 import { OffreEmploiComponent } from './offre-emploi/offre-emploi.component';
 import { CompetenceComponent } from './competence/competence.component';
 import { CvComponent } from './candidat/cv/cv.component';
@@ -38,9 +38,11 @@ import { DiplomeComponent } from './candidat/cv/diplome/diplome.component';
 import { FormationComponent } from './candidat/cv/formation/formation.component';
 import { NouvelleCompetenceComponent } from './competence/nouvelle-competence/nouvelle-competence.component';
 import { DatePipe } from '@angular/common';
+import { LoginCandidatComponent } from './login/login-candidat/login-candidat.component';
+import { LoginRecruteurComponent } from './login/login-recruteur/login-recruteur.component';
 
 
->>>>>>> 915d3d62d068617348daae3e50de24ef465fc567
+
 
 
 
@@ -66,18 +68,18 @@ import { DatePipe } from '@angular/common';
     NouveauQuestionnaireComponent,
     LieuComponent,
     NouveauQuestionnaireComponent,
-<<<<<<< HEAD
     ListCandidatComponent,
-    RegisterComponent
-=======
+    RegisterComponent,
     OffreEmploiComponent,
     CompetenceComponent,
     CvComponent,
     DiplomeComponent,
     FormationComponent,
     ExperienceProfessionelleComponent,
+    NouvelleCompetenceComponent,
+    LoginCandidatComponent,
+    LoginRecruteurComponent,
     NouvelleCompetenceComponent
->>>>>>> 915d3d62d068617348daae3e50de24ef465fc567
 
 
 
@@ -99,7 +101,7 @@ import { DatePipe } from '@angular/common';
 
 
   ],
-<<<<<<< HEAD
+
   providers: [
     DatePipe,DecimalPipe,
 
@@ -107,10 +109,7 @@ import { DatePipe } from '@angular/common';
 
 ],
 bootstrap: [AppComponent]
-=======
-  providers:[ DatePipe],
-  bootstrap: [AppComponent]
->>>>>>> 915d3d62d068617348daae3e50de24ef465fc567
+
 })
 export class AppModule {
 }

@@ -7,7 +7,7 @@ export interface Formation{
     anneeFormation: Date;
     dureeFormation: number;
     organismeFormateur:String;
-    cv:Cv;
+    id_cv:number;
 
 
 }
