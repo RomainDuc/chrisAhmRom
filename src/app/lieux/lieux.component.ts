@@ -8,14 +8,12 @@ import { LieuxService } from '../services/lieux.service';
 @Component({
   selector: 'app-lieux',
   templateUrl: './lieux.component.html',
-  styleUrls: ['./lieux.component.css']
+  styleUrls: ['./lieux.component.css'],
 })
 export class LieuxComponent implements OnInit {
-
   lieux$!: Observable<Lieu[]>;
 
-
-   /*
+  /*
   lieu = new FormGroup({
     activiteLieu: new FormControl(''),
   });
@@ -24,20 +22,16 @@ export class LieuxComponent implements OnInit {
     private lieuService: LieuxService,
     private router: Router,
     private route: ActivatedRoute
-    ) {
-
-  }
+  ) {}
 
   ngOnInit(): void {
-    this.lieux$= this.lieuService.getAllLieux();
- 
+    this.lieux$ = this.lieuService.getAllLieux();
   }
 
   getLieux() {
     //this.lieuService.getAllLieux().subscribe();
-
   }
-  getLieu(id: number) : void{
+  getLieu(id: number): void {
     // this.questObjet = {id: -1,
     //   note: 0,
     //   secteurActivite: "",
@@ -53,10 +47,8 @@ export class LieuxComponent implements OnInit {
       this.lieuService.getAllLieux().subscribe(data => this.lieux = data);
     }
   */
-
-
   }
- /*
+  /*
   addLieu(l: Lieu) {
      this.lieuService.add(l);
   }

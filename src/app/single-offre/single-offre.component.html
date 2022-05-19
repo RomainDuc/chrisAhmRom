@@ -11,37 +11,37 @@
                 <h5 class="gras"> Description :</h5>
                 <p> {{offreAffichage.description}} </p>
               </div>
-              <div >
+              <div>
                 <h5 class="gras"> Date de publication :</h5>
                 <p> {{offreAffichage.datePublication | date}} </p>
               </div>
-              <div >
+              <div>
                 <h5 class="gras"> Date limite de candidature :</h5>
                 <p> {{offreAffichage.dateLimite | date}} </p>
               </div>
-              <div >
+              <div>
                 <h5 class="gras"> Salaire mensuel proposé :</h5>
                 <p> {{offreAffichage.salaire }} € </p>
               </div>
-              <div >
+              <div>
                 <h5 class="gras"> Expérience souhaitée pour le poste :</h5>
-                <p> {{offreAffichage.experienceSouhaite }}  </p>
+                <p> {{offreAffichage.experienceSouhaite }} </p>
               </div>
               <div>
                 <h5 class="gras"> Niveau de qualification requis :</h5>
                 <p> {{offreAffichage.niveauQualification }} </p>
               </div>
-              <div >
+              <div>
                 <h5 class="gras"> Type de contrat proposé :</h5>
                 <p> {{offreAffichage.typeContrat }} </p>
               </div>
               <div>
-                <h5 *ngIf="offreAffichage.active"  style="color:rgb(59, 197, 41) ;" > L'offre est toujours active </h5>
-                <h5 *ngIf="!offreAffichage.active" style="color:rgb(197, 41, 41) ;" > L'offre n'est plus active </h5>
+                <h5 *ngIf="offreAffichage.active" style="color:rgb(59, 197, 41) ;"> L'offre est toujours active </h5>
+                <h5 *ngIf="!offreAffichage.active" style="color:rgb(197, 41, 41) ;"> L'offre n'est plus active </h5>
 
               </div>
               <br>
-              <div class="container" >
+              <div class="container">
                 <h5 class="gras"> Lieu de l'entreprise proposant l'offre:</h5>
                 <br>
                 <h5 class="gras">Adresse :</h5>

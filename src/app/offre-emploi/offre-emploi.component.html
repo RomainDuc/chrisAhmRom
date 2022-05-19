@@ -87,7 +87,7 @@
                     Oui
                   </label>
                 </div>
-                <div class="form-check col-3" >
+                <div class="form-check col-3">
                   <input class="form-check-input" type="radio" name="lieuDejaCree" id="pasEncore"
                     (change)="pasEncoreCree()" formControlName="lieuDejaCree" value="non">
                   <label class="form-check-label" for="pasEncore">
@@ -166,43 +166,43 @@
   </div>
 </div>
 
+<!--
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
 
-  <div class="modal fade" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-
-        <div class="modal-header">
-          <h4 class="modal-title"> Nouveau Lieu</h4>
-          <!-- <button type="button" class="close" data-dismiss="modal" (click)="reset()">&times;</button> -->
-        </div>
-        <div class="modal-body">
-
-          <form [formGroup]="lieuForm">
-
-            <label for="idAdresse" class="form-label">Adresse</label>
-            <input type="text" class="form-control" id="idAdresse" placeholder="adresse" formControlName="adresse">
-
-            <label for="idCp" class="form-label">Code Postal</label>
-            <input type="text" class="form-control" id="idCp" placeholder="codePostal" formControlName="codePostal">
-
-            <label for="idVille" class="form-label">Ville</label>
-            <input type="text" class="form-control" id="idVille" placeholder="ville" formControlName="ville">
-
-            <label for="idRegion" class="form-label">Région</label>
-            <input type="text" class="form-control" id="idRegion" placeholder="région" formControlName="region">
-
-            <label for="idPays" class="form-label">Pays</label>
-            <input type="text" class="form-control" id="idPays" placeholder="pays" formControlName="pays">
-
-
-            <button class="btn btn-primary" type="submit">Valider</button>
-
-          </form>
-        </div>
-        <div class="modal-footer">
-          <!-- <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="reset()">Fermer</button> -->
-        </div>
-
+      <div class="modal-header">
+        <h4 class="modal-title"> Nouveau Lieu</h4>
+        <button type="button" class="close" data-dismiss="modal" (click)="reset()">&times;</button>
       </div>
+      <div class="modal-body">
+
+        <form [formGroup]="lieuForm">
+
+          <label for="idAdresse" class="form-label">Adresse</label>
+          <input type="text" class="form-control" id="idAdresse" placeholder="adresse" formControlName="adresse">
+
+          <label for="idCp" class="form-label">Code Postal</label>
+          <input type="text" class="form-control" id="idCp" placeholder="codePostal" formControlName="codePostal">
+
+          <label for="idVille" class="form-label">Ville</label>
+          <input type="text" class="form-control" id="idVille" placeholder="ville" formControlName="ville">
+
+          <label for="idRegion" class="form-label">Région</label>
+          <input type="text" class="form-control" id="idRegion" placeholder="région" formControlName="region">
+
+          <label for="idPays" class="form-label">Pays</label>
+          <input type="text" class="form-control" id="idPays" placeholder="pays" formControlName="pays">
+
+
+          <button class="btn btn-primary" type="submit">Valider</button>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="reset()">Fermer</button>
+      </div>
+
     </div>
   </div>
+</div> -->

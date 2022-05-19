@@ -8,9 +8,9 @@
           <li class="nav-item">
             <a class="nav-link" aria-current="page" [routerLink]="['/home']">Home</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" [routerLink]="[ '/']"> Accueil</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" [routerLink]="[ '/candidat']"> Candidat</a>
           </li>
@@ -20,13 +20,13 @@
           </li>
 
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" [routerLink]="[ '/cvs']">Mes CV</a>
-          </li>
+          </li> -->
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/offreEmploi']" > Creer Offre Emploi</a>
+            <a class="nav-link" [routerLink]="['/offreEmploi']"> Creer Offre Emploi</a>
           </li>
-           <!--  Le Rubrique Connexion-->
+          <!--  Le Rubrique Connexion-->
           <div class="dropdown" *ngIf="idConnecte == -1">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
@@ -34,20 +34,20 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-              <li><a class="dropdown-item" [routerLink]="['/login/recruteur']">Recruteur</a></li>
-              <li><a class="dropdown-item" [routerLink]="['/login/candidat']">Candidat</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/login/recruteur']">Candidat </a></li>
+              <li><a class="dropdown-item" [routerLink]="['/login/candidat']"> Recruteur</a></li>
 
 
             </ul>
           </div>
           <li class="nav-item" *ngIf="idConnecte != -1">
-          <a class="nav-link" (click)="deco()" [routerLink]="['/']" > Deconnexion</a>
-        </li>
+            <a class="nav-link" (click)="deco()" [routerLink]="['/']"> Deconnexion</a>
+          </li>
 
         </ul>
 
         <!--lOGIN-->
-       <!-- <div class="nav navbar-nav navbar-right">
+        <!-- <div class="nav navbar-nav navbar-right">
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Login <span
                 class="glyphicon glyphicon-log-in"></span></a>
             <div class="dropdown-menu">

@@ -12,23 +12,29 @@
                 <div class="col-md-6">
                   <div class="faq-individual" *ngFor="let offre of offres |  slice:0:5" (click)="toggleClass(offre)"
                     [ngClass]="{'active': offre.active}">
-                    <p class="faq-question"> Offre {{offre.categorieOffre}}</p>
+                    <p class="faq-question" style="font-size: 18px;"> Offre {{offre.categorieOffre}}</p>
                     <p class="faq-answer"> Description : {{offre.description}}</p>
                     <p class="faq-answer"> Salaire : {{offre.salaire}} €</p>
                     <p class="faq-answer"> Experience Souhaitée :{{offre.experienceSouhaite}} ans</p>
 
                     <p class="faq-answer"> Date de publication :{{offre.datePublication | date}}</p>
-                    <p class="faq-answer"> Date limite de candidature  :{{offre.dateLimite | date}}</p>
-                    <button style="color: black;" class="faq-answer btn btn-success" (click)="lien(offre.id)"> Visualiser Offre</button>
+                    <p class="faq-answer"> Date limite de candidature :{{offre.dateLimite | date}}</p>
+                    <button style="color: black;" class="faq-answer btn btn-success" (click)="lien(offre.id)">
+                      Visualiser Offre</button>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="faq-individual" *ngFor="let offre of offres |  slice:6:11" (click)="toggleClass(offre)"
                     [ngClass]="{'active': offre.active}">
-                    <p class="faq-question">{{offre.description}}</p>
-                    <p class="faq-answer">{{offre.experienceSouhaite}}</p>
-                    <p class="faq-answer">{{offre.categorieOffre}}</p>
-                    <a style="color: black;" class="faq-answer" (click)="lien(offre.id)"> Visualiser Offre</a>
+                    <p class="faq-question" style="font-size: 18px;"> Offre {{offre.categorieOffre}}</p>
+                    <p class="faq-answer"> Description : {{offre.description}}</p>
+                    <p class="faq-answer"> Salaire : {{offre.salaire}} €</p>
+                    <p class="faq-answer"> Experience Souhaitée :{{offre.experienceSouhaite}} ans</p>
+
+                    <p class="faq-answer"> Date de publication :{{offre.datePublication | date}}</p>
+                    <p class="faq-answer"> Date limite de candidature :{{offre.dateLimite | date}}</p>
+                    <button style="color: black;" class="faq-answer btn btn-success" (click)="lien(offre.id)">
+                      Visualiser Offre</button>
                   </div>
                 </div>
               </div>
