@@ -13,7 +13,7 @@
 
 
 
-              <table class="table table-borderless">
+              <table>
                 <tr *ngFor="let quest of questionnaires;let i= index ">
                   <td> {{i+1}} : {{quest.secteurActivite}} </td>
                   <td><a class="btn btn-secondary" routerLink="/nouveauQuestionnaire/{{quest.id}}">
@@ -26,7 +26,7 @@
 
                 </tr>
               </table>
-              <span ></span> <button class="btn btn-info col-3" routerLink="/nouveauQuestionnaire">Creer
+              <span></span> <button class="btn btn-secondary col-3" routerLink="/nouveauQuestionnaire">Creer
                 nouveau
                 Questionnaire </button>
 

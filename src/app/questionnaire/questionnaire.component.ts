@@ -7,34 +7,33 @@ import { QuestionaireService } from '../services/questionaire.service';
 @Component({
   selector: 'app-questionnaire',
   templateUrl: './questionnaire.component.html',
-  styleUrls: ['./questionnaire.component.css']
+  styleUrls: ['./questionnaire.component.css'],
 })
 export class QuestionnaireComponent implements OnInit {
-
-  questionnaires !: Questionnaire[];
+  questionnaires!: Questionnaire[];
 
   //icones :
-  iconeEdit =faEdit;
+  iconeEdit = faEdit;
   iconePoubelle = faTrash;
 
-
-  constructor(private questionnaireService: QuestionaireService ) { }
-
+  constructor(private questionnaireService: QuestionaireService) {}
 
   ngOnInit(): void {
     this.getQuestionnaires();
   }
 
   getQuestionnaires() {
-    this.questionnaireService.getAll().subscribe(data => this.questionnaires = data)
+    this.questionnaireService
+      .getAll()
+      .subscribe((data) => (this.questionnaires = data));
   }
 
   supprimer(id: number) {
     this.questionnaireService.delete(id).subscribe((data) => {
-      if(data == "DELETED SUCCESSFULLY") {
-        this. getQuestionnaires();
-        console.log(data)
+      if (data == 'DELETED SUCCESSFULLY') {
+        this.getQuestionnaires();
+        console.log(data);
       }
-     })
+    });
   }
 }

@@ -18,42 +18,50 @@ import { NouveauQuestionnaireComponent } from './questionnaire/nouveau-questionn
 
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 import { SingleOffreComponent } from './single-offre/single-offre.component';
+import { RecruteurComponent } from './recruteur/recruteur.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'questionnaire', component: QuestionnaireComponent },
+  { path: 'nouveauQuestionnaire', component: NouveauQuestionnaireComponent },
+  {
+    path: 'nouveauQuestionnaire/:id',
+    component: NouveauQuestionnaireComponent,
+  },
+  { path: 'examen/:id', component: ExamenComponent },
 
-  {path : '', component: HomeComponent},
-  {path : 'home', component: HomeComponent},
-  {path : 'questionnaire', component: QuestionnaireComponent},
-  {path : 'nouveauQuestionnaire', component: NouveauQuestionnaireComponent},
-  {path : 'nouveauQuestionnaire/:id', component: NouveauQuestionnaireComponent},
-  {path : 'examen/:id', component: ExamenComponent},
+  { path: 'cvs', component: CvComponent },
+  { path: 'login/candidat', component: LoginCandidatComponent },
+  { path: 'login/recruteur', component: LoginRecruteurComponent },
 
-  {path : 'cvs', component: CvComponent},
-  {path: 'login/candidat', component: LoginCandidatComponent },
-  {path: 'login/recruteur', component: LoginRecruteurComponent },
+  { path: 'lieux', component: LieuxComponent },
+  { path: 'lieu/:id', component: LieuComponent },
+  {
+    path: 'nouveauQuestionnaire/:id',
+    component: NouveauQuestionnaireComponent,
+  },
+  {
+    path: 'candidat',
+    component: CandidatComponent,
+    children: [
+      { path: 'add', component: RegisterComponent },
+      { path: 'edit/:id', component: RegisterComponent },
+    ],
+  },
 
-  {path : 'lieux', component: LieuxComponent},
-  {path: 'lieu/:id', component: LieuComponent },
-  {path : 'nouveauQuestionnaire/:id', component: NouveauQuestionnaireComponent},
-  { path: 'candidat', component: CandidatComponent,
-  children: [
-    { path: 'add', component: RegisterComponent },
-    { path: 'edit/:id', component: RegisterComponent }
-] },
+  { path: 'offreEmploi', component: OffreEmploiComponent },
 
-  {path : 'offreEmploi', component: OffreEmploiComponent},
+  { path: 'competences', component: CompetenceComponent },
+  { path: 'cv', component: CvComponent },
+  { path: 'createCompetence', component: NouvelleCompetenceComponent },
+  { path: 'offre/:id', component: SingleOffreComponent },
 
-  {path: 'competences', component: CompetenceComponent },
-  {path : 'cv', component: CvComponent},
-  {path: 'createCompetence', component: NouvelleCompetenceComponent },
-  {path: 'offre/:id', component: SingleOffreComponent }
-
-
-
+  { path: 'recruteur', component: RecruteurComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

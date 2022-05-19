@@ -1,1 +1,70 @@
-<p>recruteur works!</p>
+<div class="container bootstrap snippets bootdeys">
+  <div class="row">
+    <div class="col-md-4 col-sm-6 content-card">
+      <div class="card-big-shadow">
+        <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
+          <div class="content">
+            <h6 class="category"></h6>
+            <h4 class="title"><a href="#">Ajout Recruteur</a></h4>
+            <div>
+              <div class="submit-form">
+                <div *ngIf="!submitted">
+                  <div class="form-group">
+                    <label for="login">Login</label>
+                    <input type="text" class="form-control" id="login" required [(ngModel)]="candidat.login"
+                      name="login" />
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" class="form-control" id="password" required [(ngModel)]="candidat.password"
+                      name="password" />
+                  </div>
+                  <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" class="form-control" id="nom" required [(ngModel)]="candidat.nom" name="nom" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="prenom">Prenom</label>
+                    <input type="text" class="form-control" id="prenom" required [(ngModel)]="candidat.prenom"
+                      name="prenom" />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" id="email" required [(ngModel)]="candidat.email"
+                      name="email" />
+                  </div>
+
+                  <label for="diponibilite">Disponibilite: </label><br />
+                  <select class="form-group">
+                    <option value="">--Merci de choisir--</option>
+                    <option [ngValue]="true">Disponible</option>
+                    <option [ngValue]="false">Non disponible</option>
+                  </select>
+
+                  <div class="form-group">
+                    <label for="title">Date de naissance</label>
+                    <input type="date" class="form-control" id="dateNaissance" required
+                      [(ngModel)]="candidat.dateNaissance" name="dateNaissance" />
+                  </div>
+
+                  <button (click)="saveCandidat()" class="btn btn-success">
+                    Submit
+                  </button>
+                </div>
+
+                <div *ngIf="submitted">
+                  <h4>Candidat was submitted successfully!</h4>
+                  <button class="btn btn-success" (click)="saveCandidat()">
+                    Add
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end card -->
+    </div>
+  </div>
+</div>

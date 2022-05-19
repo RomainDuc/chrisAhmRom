@@ -8,71 +8,55 @@ import { Diplome } from 'src/app/model/Diplome.model';
 import { Formation } from 'src/app/model/formation.model';
 import { CvService } from 'src/app/services/cv.service';
 
-
 @Component({
   selector: 'app-cv',
   templateUrl: './cv.component.html',
 
-  styleUrls: ['./cv.component.css']
+  styleUrls: ['./cv.component.css'],
 })
 export class CvComponent implements OnInit {
-
   cv$!: Observable<Cv[]>;
   cvForm!: FormGroup;
   cv!: Cv;
-  modifCv!:  Cv;
+  modifCv!: Cv;
   id!: number;
   diplomes!: Diplome[];
   f!: Formation[];
   modif: boolean = false;
-  creation: boolean =false;
+  creation: boolean = false;
   select: boolean = false;
   processReq!: number;
-  idDuCvEnCours:number=0;
-  @Output() public myId = new EventEmitter
+  idDuCvEnCours: number = 0;
+  @Output() public myId = new EventEmitter();
   constructor(
-      private cvService: CvService,
-      private route: ActivatedRoute,
-      private datePipe: DatePipe
-
-
-    ) {
-
-    }
-
-
+    private cvService: CvService,
+    private route: ActivatedRoute,
+    private datePipe: DatePipe
+  ) {}
 
   ngOnInit() {
-     this.cvService.getCv(1).subscribe((data) => {
-       this.cv= data;
-
-
-     });
-     this.processReq=2;
-     this.idDuCvEnCours=1;
-
-
+    this.cvService.getCv(1).subscribe((data) => {
+      this.cv = data;
+    });
+    this.processReq = 2;
+    this.idDuCvEnCours = 1;
   }
- eventId(){
-   this.myId.emit(1)
- }
-   // CONTROLE SI L'UTILISATEUR MODIFIE
-   isMofif(){
-
-    if(this.select){
+  eventId() {
+    this.myId.emit(1);
+  }
+  // CONTROLE SI L'UTILISATEUR MODIFIE
+  isMofif() {
+    if (this.select) {
       this.modif = true;
-    }else{
+    } else {
       this.modif = !this.modif;
     }
-
-
   }
 
-   // CONTROLE SI L'UTILISATEUR CREER
-  isCreate(){
-
-    this.creation = ! this.creation;
-  }
+  // CONTROLE SI L'UTILISATEUR CREER
+  isCreate() {
+    this.creation = !this.creation;
+  } /*
   /*
     // RETOURNE UN DIPLOME PAR SON ID
     getOneExperienceProfessionelle(id: number){
@@ -148,12 +132,12 @@ export class CvComponent implements OnInit {
    this.experienceProfessionelleServive.add(this.experienceProfessionelle).subscribe();
 
  }
-  */ /*
+
    refresh(): void {
     this._router.navigateByUrl(`competences`,{skipLocationChange:true}).then(() =>{
          this._router.navigate([decodeURI(this.location.path)])
     });
-   }*/
+   }
   /*
     // SUPPRESSION
     deleteExperienceProfessionelle(id: number){
@@ -166,7 +150,4 @@ export class CvComponent implements OnInit {
       });
 
    */
-
-
-
 }

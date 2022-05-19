@@ -40,7 +40,7 @@ export class OffreEmploiComponent implements OnInit {
     lieuDejaCree: new FormControl(),
     lieu: new FormGroup({
       id: new FormControl(),
-      version : new FormControl(),
+      version: new FormControl(),
       adresse: new FormControl(),
       codePostal: new FormControl(),
       ville: new FormControl(),
@@ -65,8 +65,8 @@ export class OffreEmploiComponent implements OnInit {
   constructor(
     private offreEmploiService: OffreServiceService,
     private lieuService: LieuxService,
-    private toaster : ToastrService,
-    private router : Router
+    private toaster: ToastrService,
+    private router: Router
   ) {
     //instancie un objet offre
 
@@ -96,6 +96,8 @@ export class OffreEmploiComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  // bon c le bordel ! ici on regarde si l'offre est reliée à un lieu préexistant ou si on a créé un lieu via formulaire
   creelOffre() {
     this.offreEmploiForm.controls['datePublication'].setValue(Date.now());
     this.offreEmploiService
@@ -105,31 +107,31 @@ export class OffreEmploiComponent implements OnInit {
       });
     if (this.lieuCree == 'oui') {
       let idDeLieu = this.idLieuForm.get('idLieu')?.value;
-      console.log(idDeLieu)
+      console.log(idDeLieu);
       this.lieuAffichage.forEach((lieu) => {
         if (lieu.id == idDeLieu) {
-          console.log("1er if")
+          // console.log("1er if")
+          //on récupère le lieu pr l'affecter à l'offre
           this.lieuService.find(idDeLieu).subscribe((lieu) => {
             this.lieuStockage = lieu;
-            console.log(this.lieuStockage);
-            console.log(JSON.stringify(this.offreEmploi))
+            //console.log(this.lieuStockage);
+            //console.log(JSON.stringify(this.offreEmploi))
             this.offreEmploiForm.controls['lieu'].setValue(this.lieuStockage);
             this.offreEmploiService
               .add(this.offreEmploiForm.value)
               .subscribe((data) => {
                 this.offreEmploi = data;
-                this.toaster.success("Offre créée !");
+                // on fait le truc qui valide et on renvoye sur l'offre en question
+                this.toaster.success('Offre créée !');
                 this.offreEmploiForm.reset();
-                this.router.navigate(['offre/'+ this.offreEmploi.id])
-
+                this.router.navigate(['offre/' + this.offreEmploi.id]);
               });
-
           });
         }
       });
-      console.log("fin 1er if")
+      console.log('fin 1er if');
     } else if (this.lieuCree == 'cree') {
-      console.log("2eme if")
+      console.log('2eme if');
       this.offreEmploiForm.controls['lieu'].setValue(this.lieuStockage);
 
       this.offreEmploiService
@@ -137,15 +139,14 @@ export class OffreEmploiComponent implements OnInit {
         .subscribe((data) => {
           this.offreEmploi = data;
           this.offreEmploiForm.reset();
-          this.toaster.success("Offre créée !");
-          this.router.navigate(['offre/'+ this.offreEmploi.id])
-
+          this.toaster.success('Offre créée !');
+          this.router.navigate(['offre/' + this.offreEmploi.id]);
         });
-        console.log(" fin 2eme if")
-
+      console.log(' fin 2eme if');
     }
   }
 
+  //methode caduque ducoup...
   creeOffre() {
     //affecter données du formulaire à notre Objet
     this.offreEmploiForm.controls['datePublication'].setValue(Date.now());
@@ -173,7 +174,7 @@ export class OffreEmploiComponent implements OnInit {
       .add(this.offreEmploiForm.value)
       .subscribe((data) => {
         this.offreEmploi = data;
-        this.toaster.success("Lieu créé!");
+        this.toaster.success('Lieu créé!');
       });
   }
 
@@ -187,6 +188,7 @@ export class OffreEmploiComponent implements OnInit {
     });
   }
 
+  //on récupère les lieux pr les afficher dans le select
   pasEncoreCree() {
     this.lieuCree = this.offreEmploiForm.get('lieuDejaCree')?.value;
     if (this.lieuCree == 'oui') {

@@ -144,7 +144,7 @@ body{margin-top:20px;}
   padding: 20px 20px 10px 20px;
 }
 .card[data-color="blue"] .category {
-  color: #7a9e9f;
+  color: #6d071a;
 }
 
 .card .category, .card .label {
@@ -374,5 +374,8 @@ h2{
       display: block;
       text-align: center;
   }
+}
+td {
+  color: black;
 }
 

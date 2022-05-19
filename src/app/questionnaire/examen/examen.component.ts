@@ -12,20 +12,20 @@ import { ReponseService } from 'src/app/services/reponse.service';
   styleUrls: ['./examen.component.css'],
 })
 export class ExamenComponent implements OnInit {
-
-  questionnaire : Questionnaire = {
+  questionnaire: Questionnaire = {
     id: -1,
     note: 9,
-    secteurActivite: "",
-    questions: []
+    secteurActivite: '',
+    questions: [],
   };
   id!: number;
+  qCMValide: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
     private questionnaireService: QuestionaireService,
-    private reponseService : ReponseService,
-    private router : Router
+    private reponseService: ReponseService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -34,7 +34,6 @@ export class ExamenComponent implements OnInit {
     });
     this.getQuestionnaire();
     this.nettoyerQuestionnaire();
-
   }
 
   //un get avec les réponses aux questions (faut faire ca sinon on les a pas..)
@@ -42,47 +41,47 @@ export class ExamenComponent implements OnInit {
     this.questionnaireService.find(this.id).subscribe((data) => {
       this.questionnaire = data;
       this.questionnaire.questions.forEach((question) => {
-        this.reponseService.getAllByQuestion(question.id).subscribe(reponse =>{
-          question.reponses = reponse;
-        })
+        this.reponseService
+          .getAllByQuestion(question.id)
+          .subscribe((reponse) => {
+            question.reponses = reponse;
+          });
       });
-     // this.nettoyerQuestionnaire();
+      // this.nettoyerQuestionnaire();
     });
   }
 
   //récupérer l'info que le gar a clické sur le bouton check pour cette réponse de cette question
-  changeVraiFaux(idQuestion : number, idReponse : number) {
-    this.questionnaire.questions.forEach( question => {
-      if( question.id === idQuestion) {
-        question.reponses.forEach(reponse => {
-          if(reponse.id === idReponse) {
-            reponse.choisie= true;
+  changeVraiFaux(idQuestion: number, idReponse: number) {
+    this.questionnaire.questions.forEach((question) => {
+      if (question.id === idQuestion) {
+        question.reponses.forEach((reponse) => {
+          if (reponse.id === idReponse) {
+            reponse.choisie = true;
           } else {
-            reponse.choisie= false;
+            reponse.choisie = false;
           }
-        })
+        });
       }
-    })
+    });
   }
   //faut que quand on charge la page, ca nous remet le statut "choisi" à zéro pour pouvoir repasser le questionnaire
   nettoyerQuestionnaire() {
-    this.questionnaire.questions.forEach( question => {
-      question.reponses.forEach(reponse => {
-        reponse.choisie =false;
-      })
-    })
+    this.questionnaire.questions.forEach((question) => {
+      question.reponses.forEach((reponse) => {
+        reponse.choisie = false;
+      });
+    });
   }
 
   //enregister les Réponses sélectionnées dans la DB
   validerQuestionnaire() {
-    this.questionnaire.questions.forEach(question => {
-      question.reponses.forEach(reponse => {
-        this.reponseService.add(reponse).subscribe()
-      })
-    })
+    this.questionnaire.questions.forEach((question) => {
+      question.reponses.forEach((reponse) => {
+        this.reponseService.add(reponse).subscribe();
+        this.qCMValide = true;
+      });
+    });
     this.router.navigate(['/questionnaire']);
   }
-
-
-
 }

@@ -1,27 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
-import {CategorieOffre, enumSelector, Villes} from '../model/categorieOffres'
+import { CategorieOffre, enumSelector, Villes } from '../model/categorieOffres';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
-
-
 export class HomeComponent implements OnInit {
-
-  aCherche : boolean = false;
+  aCherche: boolean = false;
 
   typeEmploi = enumSelector(CategorieOffre);
-  experience = [0,2,5,10];
-  villes  = enumSelector(Villes);
-
+  experience = [0, 2, 5, 10];
+  villes = enumSelector(Villes);
 
   experienceForm = new FormControl('');
-  capsule  = new FormControl('');
-  sopla  = new FormControl('');
+  capsule = new FormControl('');
+  sopla = new FormControl('');
 
   jobSearch = new FormGroup({
     tools: new FormControl(''),
@@ -29,20 +25,14 @@ export class HomeComponent implements OnInit {
     experience: new FormControl(''),
   });
 
-    competences !: string;
+  competences!: string;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   recherche() {
     //on va voir attend
     this.aCherche = true;
   }
-
 }
-
-
-
-

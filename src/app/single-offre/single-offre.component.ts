@@ -9,11 +9,8 @@ import { OffreServiceService } from '../services/offre-service.service';
   styleUrls: ['./single-offre.component.css'],
 })
 export class SingleOffreComponent implements OnInit {
-
-
   idOffre: number = 0;
   offreAffichage!: offreEmploi;
-
 
   constructor(
     private offreService: OffreServiceService,
